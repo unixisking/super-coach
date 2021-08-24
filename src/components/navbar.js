@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Button from './Button';
 
 const navigation = [
-  { name: 'Coach Lausanne', href: '#' },
-  { name: 'À propos', href: '#' },
-  { name: 'Prix', href: '#' },
+  { name: 'Coach Lausanne', to: '/' },
+  { name: 'À propos', to: '/about' },
+  { name: 'Prix', to: '/pricing' },
 ];
 
 export default function Navbar() {
@@ -42,18 +43,18 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex md:space-x-10">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.to}
                 className="font-medium text-gray-200 hover:text-primary hover:underline"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
             <span className="inline-flex">
-              <Button text="Contact" />
+              <Button to="/contact" text="Contact" />
             </span>
           </div>
         </nav>
@@ -95,7 +96,7 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-            <Button text="Contact" />
+            <Button to="/contact" text="Contact" />
           </div>
         </Popover.Panel>
       </Transition>

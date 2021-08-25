@@ -60,7 +60,15 @@ function IndexPage() {
       </video>
       <motion.div
         transition={{ delay: 1, from: { y: -10000 }, to: { y: 0 } }}
-        className="absolute top-1/3 left-56 z-30 text-center"
+        className="absolute z-30 text-center"
+        style={{
+          top: '50%',
+          left: '50%',
+          height: '300px',
+          width: '1100px',
+          marginLeft: '-550px',
+          marginTop: '-150px',
+        }}
       >
         <motion.h1
           className="text-6xl text-white"

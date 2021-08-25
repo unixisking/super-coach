@@ -40,7 +40,7 @@ export default function ContactPage() {
                   <span className="text-right">DETERMINATION</span>
                   <br /> SOURIRE
                 </h1>
-                <p className="mt-6 text-xl text-warm-gray-500 max-w-3xl">
+                <p className="mt-6 text-xl text-gray-400 max-w-3xl">
                   Vel nunc non ut montes, viverra tempor. Proin lectus nibh
                   phasellus morbi non morbi. In elementum urna ut volutpat.
                   Sagittis et vel et fermentum amet consequat.
@@ -385,22 +385,17 @@ export default function ContactPage() {
             <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
               <h2
                 id="offices-heading"
-                className="text-3xl font-extrabold text-warm-gray-900"
+                className="text-3xl font-extrabold text-gray-300"
               >
                 Our offices
               </h2>
-              <p className="mt-6 text-lg text-warm-gray-500 max-w-3xl">
-                Varius facilisi mauris sed sit. Non sed et duis dui leo,
-                vulputate id malesuada non. Cras aliquet purus dui laoreet diam
-                sed lacus, fames.
-              </p>
               <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {offices.map((office) => (
                   <div key={office.id}>
-                    <h3 className="text-lg font-medium text-warm-gray-900">
+                    <h3 className="text-lg font-medium text-gray-300">
                       {office.city}
                     </h3>
-                    <p className="mt-2 text-base text-warm-gray-500">
+                    <p className="mt-2 text-base text-gray-400">
                       {office.address.map((line) => (
                         <span key={line} className="block">
                           {line}

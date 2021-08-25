@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
+import { RiTimerFlashLine } from 'react-icons/ri';
+import { BsCalendar } from 'react-icons/bs';
+import clsx from 'clsx';
 
 export default function ContactPage() {
+  const [workout, setWorkout] = useState(false);
   const offices = [
     {
       id: 1,
@@ -14,6 +18,11 @@ export default function ContactPage() {
       address: ['Chemin Du Viaduc 12', '1008 Malley'],
     },
   ];
+  console.log('workout', workout);
+  const handleWorkoutChange = (value) => {
+    console.log(value);
+    setWorkout(value);
+  };
   return (
     <Layout>
       <SEO
@@ -321,7 +330,149 @@ export default function ContactPage() {
                           />
                         </div>
                       </div>
-                      <div className="sm:col-span-2">
+                      <div className="col-span-2">
+                        <div className="flex justify-between">
+                          <label
+                            htmlFor="phone"
+                            className="block text-sm font-medium text-warm-gray-900"
+                          >
+                            Select which workout you want to register for
+                          </label>
+                        </div>
+                        <div className="col-span-2 grid grid-cols-3 gap-8 mt-4">
+                          <div
+                            onClick={() => handleWorkoutChange('full_body')}
+                            className={clsx('relative cursor-pointer', {
+                              'border-4 border-primary rounded-lg':
+                                workout === 'full_body',
+                            })}
+                          >
+                            <img
+                              className="rounded-lg"
+                              src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"
+                            />
+                            <motion.div
+                              whileHover="visible"
+                              initial="hidden"
+                              variants={{
+                                hidden: {
+                                  opacity: 0,
+                                },
+                                visible: {
+                                  opacity: 1,
+                                },
+                              }}
+                              transition={{
+                                type: 'tween',
+                                ease: 'easeInOut',
+                                repeatType: 'reverse',
+                                duration: 1,
+                              }}
+                              className="absolute top-0 left-0 w-full h-full hover:bg-red-500 hover:bg-gradient-to-r hover:from-primary hover:to-red-500 hover:bg-opacity-60 rounded-lg"
+                            >
+                              <div className="flex flex-col text-white items-center h-full">
+                                <h2 className="text-2xl mt-6">Full Body</h2>
+                                <div className="flex items-center mt-4 text-left">
+                                  <BsCalendar className="h-6 w-6" />
+                                  <p className="ml-2">chaque Lundi à 18:45</p>
+                                </div>
+                                <div className="flex items-center text-left mt-4">
+                                  <RiTimerFlashLine className="h-8 w-8" />
+                                  <p className="ml-2">60 mins</p>
+                                </div>
+                              </div>
+                            </motion.div>
+                          </div>
+                          <div
+                            onClick={() => handleWorkoutChange('cardio_step')}
+                            className={clsx('relative cursor-pointer', {
+                              'border-4 border-primary rounded-lg':
+                                workout === 'cardio_step',
+                            })}
+                          >
+                            <img
+                              className="rounded-lg"
+                              src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png"
+                            />
+                            <motion.div
+                              whileHover="visible"
+                              initial="hidden"
+                              variants={{
+                                hidden: {
+                                  opacity: 0,
+                                },
+                                visible: {
+                                  opacity: 1,
+                                },
+                              }}
+                              transition={{
+                                type: 'tween',
+                                ease: 'easeInOut',
+                                repeatType: 'reverse',
+                                duration: 1,
+                              }}
+                              className="absolute top-0 left-0 w-full h-full hover:bg-red-500 hover:bg-gradient-to-r hover:from-primary hover:to-red-500 hover:bg-opacity-60 rounded-lg"
+                            >
+                              <div className="flex flex-col text-white items-center h-full">
+                                <h2 className="text-2xl mt-6">Cardio Step</h2>
+                                <div className="flex items-center mt-4 text-left">
+                                  <BsCalendar className="h-6 w-6" />
+                                  <p className="ml-2">chaque Mardi à 19:00</p>
+                                </div>
+                                <div className="flex items-center text-left mt-4">
+                                  <RiTimerFlashLine className="h-8 w-8" />
+                                  <p className="ml-2">45 mins</p>
+                                </div>
+                              </div>
+                            </motion.div>
+                          </div>
+                          <div
+                            onClick={() => handleWorkoutChange('booty_sculpt')}
+                            className={clsx('relative cursor-pointer', {
+                              'border-4 border-primary rounded-lg':
+                                workout === 'booty_sculpt',
+                            })}
+                          >
+                            <img
+                              className="rounded-lg"
+                              src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png"
+                            />
+                            <motion.div
+                              whileHover="visible"
+                              initial="hidden"
+                              variants={{
+                                hidden: {
+                                  opacity: 0,
+                                },
+                                visible: {
+                                  opacity: 1,
+                                },
+                              }}
+                              transition={{
+                                type: 'tween',
+                                ease: 'easeInOut',
+                                repeatType: 'reverse',
+                                duration: 1,
+                              }}
+                              className="absolute top-0 left-0 w-full h-full hover:bg-red-500 hover:bg-gradient-to-r hover:from-primary hover:to-red-500 hover:bg-opacity-60 rounded-lg"
+                            >
+                              <div className="flex flex-col text-white items-center h-full">
+                                <h2 className="text-2xl mt-6">Booty Sculpt</h2>
+                                <div className="flex items-center mt-4 text-left">
+                                  <BsCalendar className="h-6 w-6" />
+                                  <p className="ml-2">chaque Jeudi à 19:45</p>
+                                </div>
+                                <div className="flex items-center text-left mt-4">
+                                  <RiTimerFlashLine className="h-8 w-8" />
+                                  <p className="ml-2">60 mins</p>
+                                </div>
+                              </div>
+                            </motion.div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* <div className="sm:col-span-2">
                         <label
                           htmlFor="subject"
                           className="block text-sm font-medium text-warm-gray-900"
@@ -336,8 +487,8 @@ export default function ContactPage() {
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                           />
                         </div>
-                      </div>
-                      <div className="sm:col-span-2">
+                      </div> */}
+                      {/* <div className="sm:col-span-2">
                         <div className="flex justify-between">
                           <label
                             htmlFor="message"
@@ -362,7 +513,7 @@ export default function ContactPage() {
                             defaultValue={''}
                           />
                         </div>
-                      </div>
+                      </div> */}
                       <div className="sm:col-span-2 sm:flex sm:justify-end">
                         <motion.button
                           whileHover={{ scale: 1.1 }}

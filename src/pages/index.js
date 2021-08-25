@@ -67,7 +67,6 @@ const features = [
 function IndexPage() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
-  console.log(controls);
 
   useEffect(() => {
     async function animate() {
@@ -86,7 +85,7 @@ function IndexPage() {
       />
 
       <div className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20" />
-      <video autoPlay muted loop className=" top-0 h-screen w-screen">
+      <video autoPlay muted loop className=" top-0 w-screen">
         <source src={HeroVideo} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
@@ -142,7 +141,7 @@ function IndexPage() {
       <div className="py-16 bg-black lg:py-24 border-b-2 border-gray-900">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative" style={{ width: 305 }}>
-            <motion.h2
+            <h2
               ref={ref}
               className="text-left text-3xl leading-8 font-medium tracking-tight sm:text-6xl border-b-4 pb-4 border-primary"
               initial="hidden"
@@ -165,7 +164,7 @@ function IndexPage() {
               }}
             >
               Nos Coachs
-            </motion.h2>
+            </h2>
           </div>
           <div
             ref={ref}

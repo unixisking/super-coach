@@ -32,6 +32,38 @@ const letter = {
   },
 };
 
+const features = [
+  {
+    text: 'Bravo à @_unelunatique qui a perdu 15 kilos avec LOUISSAINT TRAINING ! Magnifique avant et magnifique après. On adore !',
+    image:
+      'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895733/super-coach/pic1_szue7b.png',
+  },
+  {
+    text: '"Pour The Voice, le coach Louissaint nous a concocté une programme de remise en forme sur mesure. C\'était OUF !!!"',
+    image:
+      'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895757/super-coach/pic02_cbwcwd.png',
+    // img: ScaleIcon,
+  },
+  {
+    text: 'Perte de poids et transformation remarqu-able pour Arnaud, félicitations pour ta forte détermination à chaque cours!',
+    image:
+      'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895784/super-coach/03_suab0f.png',
+    // img: LightningBoltIcon,
+  },
+  {
+    text: '"Chez LOUISSAINT TRAINING y\'a une ambiance de feu !"',
+    image:
+      'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895797/super-coach/05_ypia5z.png',
+    // img: LightningBoltIcon,
+  },
+  {
+    text: 'Elle a atteint son objectif avec LOUISSAINT TRAINING ! Un immense bravo à elle pour ses efforts qui ont porté leurs fruits !',
+    image:
+      'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895816/super-coach/05_b3lp3s.png',
+    // img: LightningBoltIcon,
+  },
+];
+
 function IndexPage() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -135,12 +167,35 @@ function IndexPage() {
               Nos Coachs
             </motion.h2>
           </div>
-
           <div
             ref={ref}
             className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
           >
-            <motion.div
+            <div
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 2,
+              }}
+              className="mt-10 -mx-4 relative lg:mt-0"
+              aria-hidden="true"
+            >
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894409/super-coach/WhatsApp_Image_2021-08-23_at_16.30.25_g6djuz.jpg"
+                alt=""
+              />
+            </div>
+            <div
               className="relative"
               variants={{
                 visible: { opacity: 1 },
@@ -178,13 +233,36 @@ function IndexPage() {
                 Training font brûler des calories, dans une ambiance
                 bienveillante et foncièrement positive.
               </p>
+            </div>
+          </div>
+
+          <div
+            ref={ref}
+            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+          >
+            <div
+              className="relative"
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
               <h3
                 style={{
                   background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
-                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8"
+                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
               >
                 Rebecca Luissaint
               </h3>
@@ -199,8 +277,8 @@ function IndexPage() {
                 ville, sa devise reste la même: “un esprit sain dans un corps
                 sain”.
               </p>
-            </motion.div>
-            <motion.div
+            </div>
+            <div
               variants={{
                 visible: { opacity: 1 },
                 hidden: { opacity: 0 },
@@ -220,15 +298,286 @@ function IndexPage() {
               <img
                 className="relative mx-auto rounded-lg"
                 width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629663986/super-coach/coaches_yu4pyl.jpg"
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894528/super-coach/WhatsApp_Image_2021-08-23_at_13.29.47_nkbudo.jpg"
                 alt=""
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
       <div className="py-16 bg-black lg:py-24">
         <Features />
+      </div>
+      <div className="py-16 lg:py-24 bg-black border-t-2 border-gray-900">
+        <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
+          <div className="relative" style={{ width: 500 }}>
+            <h2
+              ref={ref}
+              className="text-left text-3xl leading-8 font-medium tracking-tight sm:text-6xl border-b-4 pb-4 border-primary"
+              initial="hidden"
+              animate={controls}
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1.5,
+              }}
+              variants={{
+                visible: { x: 0 },
+                hidden: { x: -1000 },
+              }}
+              style={{
+                background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                borderColor: '#dcb6bd',
+              }}
+            >
+              Histoires de Succès
+            </h2>
+          </div>
+
+          <div className="py-12 ">
+            <div className="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+              <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
+                {features.map((feature) => (
+                  <div key={feature.name}>
+                    <dt>
+                      <img src={feature.image} alt="" />
+                      <p className="mt-5 text-lg leading-6 font-medium text-gray-400">
+                        {feature.text}
+                      </p>
+                    </dt>
+                    {/* <dd className="mt-2 text-base text-gray-500">
+                      {feature.description}
+                    </dd> */}
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-16 lg:py-24 bg-black border-t-2 border-gray-900">
+        <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
+          <div className="relative" style={{ width: 275 }}>
+            <h2
+              ref={ref}
+              className="text-left text-3xl leading-8 font-medium tracking-tight sm:text-6xl border-b-4 pb-4 border-primary"
+              initial="hidden"
+              animate={controls}
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1.5,
+              }}
+              variants={{
+                visible: { x: 0 },
+                hidden: { x: -1000 },
+              }}
+              style={{
+                background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                borderColor: '#dcb6bd',
+              }}
+            >
+              Nos Cours
+            </h2>
+          </div>
+          <div
+            ref={ref}
+            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+          >
+            <div
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 2,
+              }}
+              className="mt-10 -mx-4 relative lg:mt-0"
+              aria-hidden="true"
+            >
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"
+                alt=""
+              />
+            </div>
+            <div
+              className="relative"
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <h3
+                style={{
+                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
+              >
+                FULL BODY WORKOUT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Le FULL BODY WORKOUT est une session de 60 minutes, conçue pour
+                raffermir la silhouette et brûler des calories. Chaque lundi à
+                18h45, le/la coach vous accompagne à chaque seconde, pour
+                booster vos efforts ! Ouvert aux débutant·e·s et à tous les
+                niveaux, le FULL BODY WORKOUT c’est un rendez-vous hebdomadaire,
+                parfait pour tonifier le corps de la tête aux pieds.
+              </p>
+            </div>
+          </div>
+
+          <div
+            ref={ref}
+            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+          >
+            <div
+              className="relative"
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <h3
+                style={{
+                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
+              >
+                CARDIO STEP
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Venez brûler un maximum de calories pendant notre cours CARDIO
+                STEP. Accrochez-vous car chaque mardi à 19 heures, on fait
+                fondre les kilos pendant 45minutes EXPLOSIVES! L&apos;objectif ?
+                Transpirer et se défouler... avec le sourire et du bon son.
+              </p>
+            </div>
+            <div
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 2,
+              }}
+              className="mt-10 -mx-4 relative lg:mt-0"
+              aria-hidden="true"
+            >
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            ref={ref}
+            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+          >
+            <div
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 2,
+              }}
+              className="mt-10 -mx-4 relative lg:mt-0"
+              aria-hidden="true"
+            >
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png"
+                alt=""
+              />
+            </div>
+            <div
+              className="relative"
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              animate={controls}
+              initial="hidden"
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                repeatType: 'reverse',
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <h3
+                style={{
+                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
+              >
+                BOOTY SCULPT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Qui n’a pas envie d’un fessier ferme et bien dessiné? Chaque
+                jeudi à 19h45, venez sculpter le muscle le plus important du
+                corps humain le grand fessier ! Le cours BOOTY SCULPT c’est 60
+                minutes hebdomadaires, parfaites pour combattre la cellulite et
+                se sculpter une silhouette so bootylicious !
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );

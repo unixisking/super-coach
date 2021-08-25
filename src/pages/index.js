@@ -86,7 +86,7 @@ function IndexPage() {
       />
 
       <div className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20" />
-      <video autoPlay muted loop className=" w-full top-0 ">
+      <video autoPlay muted loop className=" top-0 h-screen w-screen">
         <source src={HeroVideo} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>

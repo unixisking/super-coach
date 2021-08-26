@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
+import styled from 'styled-components';
 
 import Button from '../components/Button';
 import Layout from '../components/layout';
@@ -42,25 +43,21 @@ const features = [
     text: '"Pour The Voice, le coach Louissaint nous a concocté une programme de remise en forme sur mesure. C\'était OUF !!!"',
     image:
       'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895757/super-coach/pic02_cbwcwd.png',
-    // img: ScaleIcon,
   },
   {
     text: 'Perte de poids et transformation remarqu-able pour Arnaud, félicitations pour ta forte détermination à chaque cours!',
     image:
       'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895784/super-coach/03_suab0f.png',
-    // img: LightningBoltIcon,
   },
   {
     text: '"Chez LOUISSAINT TRAINING y\'a une ambiance de feu !"',
     image:
       'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895797/super-coach/05_ypia5z.png',
-    // img: LightningBoltIcon,
   },
   {
     text: 'Elle a atteint son objectif avec LOUISSAINT TRAINING ! Un immense bravo à elle pour ses efforts qui ont porté leurs fruits !',
     image:
       'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895816/super-coach/05_b3lp3s.png',
-    // img: LightningBoltIcon,
   },
 ];
 
@@ -84,25 +81,17 @@ function IndexPage() {
         title="Home"
       />
 
-      <div className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20" />
-      <video autoPlay muted loop className=" top-0 w-screen">
+      <div className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20 hidden lg:block" />
+      <video autoPlay muted loop className=" top-0 w-screen hidden lg:block">
         <source src={HeroVideo} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
-      <motion.div
+      <CtaSection
+        className="static lg:absolute"
         transition={{ delay: 1, from: { y: -10000 }, to: { y: 0 } }}
-        className="absolute z-30 text-center"
-        style={{
-          top: '50%',
-          left: '50%',
-          height: '300px',
-          width: '1100px',
-          marginLeft: '-550px',
-          marginTop: '-150px',
-        }}
       >
         <motion.h1
-          className="text-6xl text-white"
+          className="text-4xl md:text-5xl mt-24 lg:mt-0 lg:text-6xl text-white"
           variants={sentence}
           initial="hidden"
           animate="visible"
@@ -136,7 +125,7 @@ function IndexPage() {
           style={{ marginTop: '1.5rem' }}
           text="Je réserve"
         />
-      </motion.div>
+      </CtaSection>
 
       <div className="py-16 bg-black lg:py-24 border-b-2 border-gray-900">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
@@ -581,5 +570,19 @@ function IndexPage() {
     </Layout>
   );
 }
+// absolute z-30 text-center top-1/2 left-1/2 w-4/5
+const CtaSection = styled(motion.div)`
+  text-align: center;
+
+  @media (min-width: 992px) {
+    z-index: 30;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 1100px;
+    margin-left: -550px;
+    margin-top: -150px;
+  }
+`;
 
 export default IndexPage;

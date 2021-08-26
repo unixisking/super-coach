@@ -18,7 +18,7 @@ export default function Navbar() {
     //   </main>
     // </div>
     <Popover>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:ml-12 z-30 absolute w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:ml-12 z-30 lg:absolute w-full">
         <nav
           className="relative flex items-center justify-between sm:h-10 md:justify-center"
           aria-label="Global"

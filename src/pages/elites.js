@@ -1,18 +1,17 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import Navbar from '../components/navbar';
 
 import FootballIcon from '../images/icons/football.png';
 import BasketballIcon from '../images/icons/basketball.png';
 import SprintIcon from '../images/icons/sprint.png';
 import CheckmarkIcon from '../images/icons/check.png';
-import Timeline from '../components/Timeline';
+// import Timeline from '../components/Timeline';
 
-import oneIcon from '../images/icons/one.png';
-import twoIcon from '../images/icons/two.png';
-import threeIcon from '../images/icons/three.png';
+// import oneIcon from '../images/icons/one.png';
+// import twoIcon from '../images/icons/two.png';
+// import threeIcon from '../images/icons/three.png';
+import StepsImage from '../images/steps.png';
 
 const transferFeatures = [
   {
@@ -45,61 +44,62 @@ const communicationFeatures = [
     icon: FootballIcon,
   },
 ];
-const elitesSteps = [
-  {
-    title: 'Choisir un utilitaire ',
-    content:
-      'Choisir un utilitaire n’a jamais été aussi simple! Munissez-vous d’un permis de conduire en cours de validité. Choisissez le véhicule qui vous convient, signez, payez et les clés sont à vous.',
-    image: (
-      <img
-        src={oneIcon}
-        key="1"
-        className="w-96 h-96 shadow-md text-gray-700"
-      />
-    ),
-  },
-  {
-    title: 'En route',
-    content:
-      'Si vous voulez louer un utilitaire pour déménager, vous avez la possibilité de conduire le chargement à son point d’arrivée, ou de profiter de l’offre location camionnette + chauffeur, qui vous évitera le déplacement.',
-    image: (
-      <img
-        src={twoIcon}
-        key="1"
-        className="w-96 h-96 shadow-md text-gray-700"
-      />
-    ),
-  },
-  {
-    title: 'Restitution',
-    content:
-      'Le véhicule doit être propre et contenir le matériel de manutention au complet.  Assurez-vous également de remettre à niveau le carburant.',
-    image: (
-      <img
-        src={threeIcon}
-        key="1"
-        className="w-96 h-96 shadow-md text-gray-700"
-      />
-    ),
-  },
-];
+// const elitesSteps = [
+//   {
+//     title: 'Choisir un utilitaire ',
+//     content:
+//       'Choisir un utilitaire n’a jamais été aussi simple! Munissez-vous d’un permis de conduire en cours de validité. Choisissez le véhicule qui vous convient, signez, payez et les clés sont à vous.',
+//     image: (
+//       <img
+//         src={oneIcon}
+//         key="1"
+//         className="w-96 h-96 shadow-md text-gray-700"
+//       />
+//     ),
+//   },
+//   {
+//     title: 'En route',
+//     content:
+//       'Si vous voulez louer un utilitaire pour déménager, vous avez la possibilité de conduire le chargement à son point d’arrivée, ou de profiter de l’offre location camionnette + chauffeur, qui vous évitera le déplacement.',
+//     image: (
+//       <img
+//         src={twoIcon}
+//         key="1"
+//         className="w-96 h-96 shadow-md text-gray-700"
+//       />
+//     ),
+//   },
+//   {
+//     title: 'Restitution',
+//     content:
+//       'Le véhicule doit être propre et contenir le matériel de manutention au complet.  Assurez-vous également de remettre à niveau le carburant.',
+//     image: (
+//       <img
+//         src={threeIcon}
+//         key="1"
+//         className="w-96 h-96 shadow-md text-gray-700"
+//       />
+//     ),
+//   },
+// ];
 
 export default function TrainingElitesPage() {
   return (
     <Layout>
-      <SEO
+      {/* <SEO
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
-      />
+      /> */}
       <Navbar />
 
       <div className="w-screen h-screen">
         <h1 className="text-4xl md:text-5xl lg:text-7xl text-white text-center mt-32">
           Super Coach Training Elites
         </h1>
-        <StaticImage
+        <img
           className="mt-"
           src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630272225/super-coach/AdobeStock_68575323_oo3eov.png"
+          alt=""
         />
         <h2 className="text-xl md:text-3xl lg:text-4xl text-white text-center mt-16">
           Steeve Louissaint, coach & préparateur physique diplômé.
@@ -144,7 +144,7 @@ export default function TrainingElitesPage() {
               className="mt-10 relative lg:mt-0 text-right"
               aria-hidden="true"
             >
-              <StaticImage
+              <img
                 className="relative "
                 width={490}
                 src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630272213/super-coach/Nos_Cours_d1f4be.png"
@@ -183,7 +183,7 @@ export default function TrainingElitesPage() {
               </div>
 
               <div className="mt-10 relative lg:mt-0 lg:col-start-1 text-left">
-                <StaticImage
+                <img
                   className="relative mx-auto"
                   width={490}
                   src="http://localhost:8000/static/10b26ddfd55b194f7de5087caade42c8/a5fb7/Nos_Cours_d1f4be.webp"
@@ -194,7 +194,8 @@ export default function TrainingElitesPage() {
           </div>
         </div>
       </div>
-      <Timeline
+      <img className="mx-auto" src={StepsImage} alt="" />
+      {/* <Timeline
         icons={[
           <img
             src={oneIcon}
@@ -213,7 +214,7 @@ export default function TrainingElitesPage() {
           />,
         ]}
         steps={elitesSteps}
-      />
+      /> */}
     </Layout>
   );
 }

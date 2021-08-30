@@ -4,6 +4,9 @@ module.exports = {
   purge: ['./src/**/*.js'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Open Sans'],
+      },
       colors: {
         primary: '#FF4C29',
         'warm-gray': colors.warmGray,

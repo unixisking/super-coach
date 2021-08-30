@@ -92,7 +92,7 @@ export default function TrainingElitesPage() {
       /> */}
       <Navbar />
 
-      <div className="w-screen h-screen">
+      <div className="w-screen">
         <h1 className="text-4xl md:text-5xl lg:text-7xl text-white text-center mt-32">
           Super Coach Training Elites
         </h1>
@@ -195,7 +195,7 @@ export default function TrainingElitesPage() {
         </div>
       </div>
 
-      <h2 className="text-4xl text-center text-gray-300 py-16 lg:py-24">
+      <h2 className="text-2xl mx-4 lg:text-4xl text-center text-gray-300 py-16 lg:py-24">
         Suivez un entraînement sur mesure qui s’adapte à votre condition
         physique, votre emploi du temps et vos objectifs.
       </h2>

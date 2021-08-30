@@ -1,16 +1,78 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { RadioGroup } from '@headlessui/react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import addDays from 'date-fns/addDays';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
-import { RiTimerFlashLine } from 'react-icons/ri';
-import { BsCalendar } from 'react-icons/bs';
-import clsx from 'clsx';
+// import { RiTimerFlashLine } from 'react-icons/ri';
+// import { BsCalendar } from 'react-icons/bs';
+// import clsx from 'clsx';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
+import Navbar from '../components/navbar';
+
+const choices = [
+  {
+    name: 'Public access',
+    description: 'This project would be available to anyone who has the link',
+    value: 'public',
+  },
+  {
+    name: 'Private to Project Members',
+    description: 'Only members of this project would be able to access',
+    value: 'private',
+  },
+];
+
+const publicWorkouts = [
+  {
+    name: 'Full Body',
+    url: '',
+  },
+  {
+    name: 'Cardio Step',
+    url: '',
+  },
+  {
+    name: 'Booty Scuplt',
+    url: '',
+  },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ');
+}
+
+const schema = Yup.object({
+  firstName: Yup.string()
+    .max(15, 'Must be 15 characters or less')
+    .required('Required'),
+  lastName: Yup.string()
+    .max(15, 'Must be 15 characters or less')
+    .required('Required'),
+  email: Yup.string().email('Invalid email address').required('Required'),
+  phone: Yup.string().required(),
+});
 
 export default function ContactPage() {
-  const [workout, setWorkout] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const [workoutType, setWorkoutType] = useState('public');
+  const [workout, setWorkout] = useState('Full Body');
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   const offices = [
     {
       id: 1,
@@ -18,10 +80,12 @@ export default function ContactPage() {
       address: ['Chemin Du Viaduc 12', '1008 Malley'],
     },
   ];
-  console.log('workout', workout);
-  const handleWorkoutChange = (value) => {
-    console.log(value);
-    setWorkout(value);
+  const onSubmit = (data) => {
+    if (workoutType === 'private') {
+      console.log({ ...data, workoutType, startDate, endDate, hello: 'hello' });
+    } else {
+      console.log({ ...data, workoutType, workout, hey: 'hey' });
+    }
   };
   return (
     <Layout>
@@ -29,6 +93,7 @@ export default function ContactPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Contact"
       />
+      <Navbar />
       <div className="min-h-screen">
         <main className="overflow-hidden">
           {/* Header */}
@@ -249,8 +314,7 @@ export default function ContactPage() {
                       Inscrivez-vous et bénéficiez d&apos;une session gratuite
                     </h3>
                     <form
-                      action="#"
-                      method="POST"
+                      onSubmit={handleSubmit(onSubmit)}
                       className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                     >
                       <div>
@@ -258,12 +322,13 @@ export default function ContactPage() {
                           htmlFor="first-name"
                           className="block text-sm font-medium text-warm-gray-900"
                         >
-                          First name
+                          Prénom
                         </label>
                         <div className="mt-1">
                           <input
                             type="text"
-                            name="first-name"
+                            name="firstName"
+                            {...register('firstName', { required: true })}
                             id="first-name"
                             autoComplete="given-name"
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
@@ -275,13 +340,12 @@ export default function ContactPage() {
                           htmlFor="last-name"
                           className="block text-sm font-medium text-warm-gray-900"
                         >
-                          Last name
+                          Nom
                         </label>
                         <div className="mt-1">
                           <input
                             type="text"
-                            name="last-name"
-                            id="last-name"
+                            {...register('lastName', { required: true })}
                             autoComplete="family-name"
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                           />
@@ -292,12 +356,12 @@ export default function ContactPage() {
                           htmlFor="email"
                           className="block text-sm font-medium text-warm-gray-900"
                         >
-                          Email
+                          Adresse e-mail
                         </label>
                         <div className="mt-1">
                           <input
                             id="email"
-                            name="email"
+                            {...register('email', { required: true })}
                             type="email"
                             autoComplete="email"
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
@@ -310,20 +374,13 @@ export default function ContactPage() {
                             htmlFor="phone"
                             className="block text-sm font-medium text-warm-gray-900"
                           >
-                            Phone
+                            Numéro de téléphone
                           </label>
-                          <span
-                            id="phone-optional"
-                            className="text-sm text-warm-gray-500"
-                          >
-                            Optional
-                          </span>
                         </div>
                         <div className="mt-1">
                           <input
                             type="text"
-                            name="phone"
-                            id="phone"
+                            {...register('phone', { required: true })}
                             autoComplete="tel"
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
                             aria-describedby="phone-optional"
@@ -331,146 +388,210 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <div className="col-span-2">
-                        <div className="flex justify-between">
-                          <label
-                            htmlFor="phone"
-                            className="block text-sm font-medium text-warm-gray-900"
+                        <label htmlFor="first-name" className=""></label>
+                        <RadioGroup
+                          onChange={(value) => setWorkoutType(value)}
+                          value={workoutType}
+                        >
+                          <RadioGroup.Label
+                            htmlFor="workoutType"
+                            className="block text-sm font-medium text-warm-gray-900 mb-4"
                           >
-                            Select which workout you want to register for
-                          </label>
-                        </div>
-                        <div className="col-span-2 grid grid-cols-3 gap-8 mt-4">
-                          <div
-                            onClick={() => handleWorkoutChange('full_body')}
-                            className={clsx('relative cursor-pointer', {
-                              'border-4 border-primary rounded-lg':
-                                workout === 'full_body',
-                            })}
-                          >
-                            <img
-                              className="rounded-lg"
-                              src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"
-                            />
-                            <motion.div
-                              whileHover="visible"
-                              initial="hidden"
-                              variants={{
-                                hidden: {
-                                  opacity: 0,
-                                },
-                                visible: {
-                                  opacity: 1,
-                                },
-                              }}
-                              transition={{
-                                type: 'tween',
-                                ease: 'easeInOut',
-                                repeatType: 'reverse',
-                                duration: 1,
-                              }}
-                              className="absolute top-0 left-0 w-full h-full hover:bg-red-500 hover:bg-gradient-to-r hover:from-primary hover:to-red-500 hover:bg-opacity-60 rounded-lg"
-                            >
-                              <div className="flex flex-col text-white items-center h-full">
-                                <h2 className="text-2xl mt-6">Full Body</h2>
-                                <div className="flex items-center mt-4 text-left">
-                                  <BsCalendar className="h-6 w-6" />
-                                  <p className="ml-2">chaque Lundi à 18:45</p>
-                                </div>
-                                <div className="flex items-center text-left mt-4">
-                                  <RiTimerFlashLine className="h-8 w-8" />
-                                  <p className="ml-2">60 mins</p>
-                                </div>
-                              </div>
-                            </motion.div>
+                            Voulez-vous une session de groupe ou une session
+                            privée ?
+                          </RadioGroup.Label>
+                          <div className="bg-white rounded-md -space-y-px">
+                            {choices.map((setting, settingIdx) => (
+                              <RadioGroup.Option
+                                key={setting.name}
+                                value={setting.value}
+                                className={({ checked }) =>
+                                  classNames(
+                                    settingIdx === 0
+                                      ? 'rounded-tl-md rounded-tr-md'
+                                      : '',
+                                    settingIdx === choices.length - 1
+                                      ? 'rounded-bl-md rounded-br-md'
+                                      : '',
+                                    checked
+                                      ? 'bg-primary bg-opacity-10 border-primary z-10'
+                                      : 'border-gray-200',
+                                    'relative border p-4 flex cursor-pointer focus:outline-none',
+                                  )
+                                }
+                              >
+                                {({ active, checked }) => (
+                                  <>
+                                    <span
+                                      className={classNames(
+                                        checked
+                                          ? 'bg-primary border-transparent'
+                                          : 'bg-white border-gray-300',
+                                        active
+                                          ? 'ring-2 ring-offset-2 ring-primary'
+                                          : '',
+                                        'h-4 w-4 mt-0.5 cursor-pointer rounded-full border flex items-center justify-center',
+                                      )}
+                                      aria-hidden="true"
+                                    >
+                                      <span className="rounded-full bg-white w-1.5 h-1.5" />
+                                    </span>
+                                    <div className="ml-3 flex flex-col">
+                                      <RadioGroup.Label
+                                        as="span"
+                                        className={classNames(
+                                          checked
+                                            ? 'text-primary'
+                                            : 'text-gray-900',
+                                          'block text-sm font-medium',
+                                        )}
+                                      >
+                                        {setting.name}
+                                      </RadioGroup.Label>
+                                      <RadioGroup.Description
+                                        as="span"
+                                        className={classNames(
+                                          checked
+                                            ? 'text-primary'
+                                            : 'text-gray-500',
+                                          'block text-sm',
+                                        )}
+                                      >
+                                        {setting.value}
+                                      </RadioGroup.Description>
+                                    </div>
+                                  </>
+                                )}
+                              </RadioGroup.Option>
+                            ))}
                           </div>
-                          <div
-                            onClick={() => handleWorkoutChange('cardio_step')}
-                            className={clsx('relative cursor-pointer', {
-                              'border-4 border-primary rounded-lg':
-                                workout === 'cardio_step',
-                            })}
-                          >
-                            <img
-                              className="rounded-lg"
-                              src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png"
-                            />
-                            <motion.div
-                              whileHover="visible"
-                              initial="hidden"
-                              variants={{
-                                hidden: {
-                                  opacity: 0,
-                                },
-                                visible: {
-                                  opacity: 1,
-                                },
-                              }}
-                              transition={{
-                                type: 'tween',
-                                ease: 'easeInOut',
-                                repeatType: 'reverse',
-                                duration: 1,
-                              }}
-                              className="absolute top-0 left-0 w-full h-full hover:bg-red-500 hover:bg-gradient-to-r hover:from-primary hover:to-red-500 hover:bg-opacity-60 rounded-lg"
-                            >
-                              <div className="flex flex-col text-white items-center h-full">
-                                <h2 className="text-2xl mt-6">Cardio Step</h2>
-                                <div className="flex items-center mt-4 text-left">
-                                  <BsCalendar className="h-6 w-6" />
-                                  <p className="ml-2">chaque Mardi à 19:00</p>
-                                </div>
-                                <div className="flex items-center text-left mt-4">
-                                  <RiTimerFlashLine className="h-8 w-8" />
-                                  <p className="ml-2">45 mins</p>
-                                </div>
-                              </div>
-                            </motion.div>
-                          </div>
-                          <div
-                            onClick={() => handleWorkoutChange('booty_sculpt')}
-                            className={clsx('relative cursor-pointer', {
-                              'border-4 border-primary rounded-lg':
-                                workout === 'booty_sculpt',
-                            })}
-                          >
-                            <img
-                              className="rounded-lg"
-                              src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png"
-                            />
-                            <motion.div
-                              whileHover="visible"
-                              initial="hidden"
-                              variants={{
-                                hidden: {
-                                  opacity: 0,
-                                },
-                                visible: {
-                                  opacity: 1,
-                                },
-                              }}
-                              transition={{
-                                type: 'tween',
-                                ease: 'easeInOut',
-                                repeatType: 'reverse',
-                                duration: 1,
-                              }}
-                              className="absolute top-0 left-0 w-full h-full hover:bg-red-500 hover:bg-gradient-to-r hover:from-primary hover:to-red-500 hover:bg-opacity-60 rounded-lg"
-                            >
-                              <div className="flex flex-col text-white items-center h-full">
-                                <h2 className="text-2xl mt-6">Booty Sculpt</h2>
-                                <div className="flex items-center mt-4 text-left">
-                                  <BsCalendar className="h-6 w-6" />
-                                  <p className="ml-2">chaque Jeudi à 19:45</p>
-                                </div>
-                                <div className="flex items-center text-left mt-4">
-                                  <RiTimerFlashLine className="h-8 w-8" />
-                                  <p className="ml-2">60 mins</p>
-                                </div>
-                              </div>
-                            </motion.div>
-                          </div>
-                        </div>
+                        </RadioGroup>
                       </div>
+                      {workoutType === 'public' ? (
+                        <div className="col-span-2">
+                          <RadioGroup
+                            value={workout}
+                            onChange={(value) => setWorkout(value)}
+                          >
+                            <RadioGroup.Label>
+                              À quel type d&apos;entraînement voulez-vous vous
+                              inscrire ?
+                            </RadioGroup.Label>
+                            <div className="bg-white rounded-md -space-y-px mt-4">
+                              {publicWorkouts.map((workout, idx) => (
+                                <RadioGroup.Option
+                                  key={workout.name}
+                                  value={workout.name}
+                                  className={({ checked }) =>
+                                    classNames(
+                                      idx === 0
+                                        ? 'rounded-tl-md rounded-tr-md'
+                                        : '',
+                                      idx === publicWorkouts.length - 1
+                                        ? 'rounded-bl-md rounded-br-md'
+                                        : '',
+                                      checked
+                                        ? 'bg-primary bg-opacity-10 border-primary z-10'
+                                        : 'border-gray-200',
+                                      'relative border p-4 flex cursor-pointer focus:outline-none',
+                                    )
+                                  }
+                                >
+                                  {({ active, checked }) => (
+                                    <>
+                                      <span
+                                        className={classNames(
+                                          checked
+                                            ? 'bg-primary border-transparent'
+                                            : 'bg-white border-gray-300',
+                                          active
+                                            ? 'ring-2 ring-offset-2 ring-primary'
+                                            : '',
+                                          'h-4 w-4 mt-0.5 cursor-pointer rounded-full border flex items-center justify-center',
+                                        )}
+                                        aria-hidden="true"
+                                      >
+                                        <span className="rounded-full bg-white w-1.5 h-1.5" />
+                                      </span>
+                                      <div className="ml-3 flex flex-col">
+                                        <RadioGroup.Label
+                                          as="span"
+                                          className={classNames(
+                                            checked
+                                              ? 'text-primary'
+                                              : 'text-gray-900',
+                                            'block text-sm font-medium',
+                                          )}
+                                        >
+                                          {workout.name}
+                                        </RadioGroup.Label>
+                                        <RadioGroup.Description
+                                          as="span"
+                                          className={classNames(
+                                            checked
+                                              ? 'text-primary'
+                                              : 'text-gray-500',
+                                            'block text-sm',
+                                          )}
+                                        >
+                                          {workout.description}
+                                        </RadioGroup.Description>
+                                      </div>
+                                    </>
+                                  )}
+                                </RadioGroup.Option>
+                              ))}
+                            </div>
+                          </RadioGroup>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="relative z-20">
+                            <div className="flex justify-between">
+                              <label
+                                htmlFor="date"
+                                className="block text-sm font-medium text-warm-gray-900"
+                              >
+                                Start Date
+                              </label>
+                            </div>
+                            <DatePicker
+                              showTimeSelect
+                              dateFormat="MMMM d, yyyy h:mm aa"
+                              className="mt-4 border-primary z-30 w-full"
+                              id="date"
+                              value={startDate}
+                              selected={startDate}
+                              onChange={(date) => setStartDate(date)}
+                              minDate={new Date()}
+                              minTime={new Date().getTime()}
+                              maxTime={addDays(new Date(), 1)}
+                              maxDate={addDays(new Date(), 90)}
+                            />
+                          </div>
+                          <div className="relative z-20">
+                            <div className="flex justify-between">
+                              <label
+                                htmlFor="date"
+                                className="block text-sm font-medium text-warm-gray-900"
+                              >
+                                end Date
+                              </label>
+                            </div>
+                            <DatePicker
+                              showTimeSelect
+                              dateFormat="MMMM d, yyyy h:mm aa"
+                              className="mt-4 border-primary z-30 w-full"
+                              id="date"
+                              value={endDate}
+                              selected={endDate}
+                              onChange={(date) => setEndDate(date)}
+                              minDate={new Date()}
+                              maxDate={addDays(new Date(), 90)}
+                            />
+                          </div>
+                        </>
+                      )}
 
                       {/* <div className="sm:col-span-2">
                         <label

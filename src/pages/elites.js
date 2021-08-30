@@ -8,6 +8,11 @@ import FootballIcon from '../images/icons/football.png';
 import BasketballIcon from '../images/icons/basketball.png';
 import SprintIcon from '../images/icons/sprint.png';
 import CheckmarkIcon from '../images/icons/check.png';
+import Timeline from '../components/Timeline';
+
+import oneIcon from '../images/icons/one.png';
+import twoIcon from '../images/icons/two.png';
+import threeIcon from '../images/icons/three.png';
 
 const transferFeatures = [
   {
@@ -38,6 +43,44 @@ const communicationFeatures = [
     id: 3,
     name: 'Johan Djourou (élite football suisse).',
     icon: FootballIcon,
+  },
+];
+const elitesSteps = [
+  {
+    title: 'Choisir un utilitaire ',
+    content:
+      'Choisir un utilitaire n’a jamais été aussi simple! Munissez-vous d’un permis de conduire en cours de validité. Choisissez le véhicule qui vous convient, signez, payez et les clés sont à vous.',
+    image: (
+      <img
+        src={oneIcon}
+        key="1"
+        className="w-96 h-96 shadow-md text-gray-700"
+      />
+    ),
+  },
+  {
+    title: 'En route',
+    content:
+      'Si vous voulez louer un utilitaire pour déménager, vous avez la possibilité de conduire le chargement à son point d’arrivée, ou de profiter de l’offre location camionnette + chauffeur, qui vous évitera le déplacement.',
+    image: (
+      <img
+        src={twoIcon}
+        key="1"
+        className="w-96 h-96 shadow-md text-gray-700"
+      />
+    ),
+  },
+  {
+    title: 'Restitution',
+    content:
+      'Le véhicule doit être propre et contenir le matériel de manutention au complet.  Assurez-vous également de remettre à niveau le carburant.',
+    image: (
+      <img
+        src={threeIcon}
+        key="1"
+        className="w-96 h-96 shadow-md text-gray-700"
+      />
+    ),
   },
 ];
 
@@ -97,9 +140,12 @@ export default function TrainingElitesPage() {
               </dl>
             </div>
 
-            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+            <div
+              className="mt-10 relative lg:mt-0 text-right"
+              aria-hidden="true"
+            >
               <StaticImage
-                className="relative mx-auto"
+                className="relative "
                 width={490}
                 src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630272213/super-coach/Nos_Cours_d1f4be.png"
                 alt=""
@@ -136,41 +182,8 @@ export default function TrainingElitesPage() {
                 </dl>
               </div>
 
-              <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
-                <svg
-                  className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
-                  width={784}
-                  height={404}
-                  fill="none"
-                  viewBox="0 0 784 404"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <pattern
-                      id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
-                      x={0}
-                      y={0}
-                      width={20}
-                      height={20}
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <rect
-                        x={0}
-                        y={0}
-                        width={4}
-                        height={4}
-                        className="text-gray-200"
-                        fill="currentColor"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect
-                    width={784}
-                    height={404}
-                    fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)"
-                  />
-                </svg>
-                <img
+              <div className="mt-10 relative lg:mt-0 lg:col-start-1 text-left">
+                <StaticImage
                   className="relative mx-auto"
                   width={490}
                   src="http://localhost:8000/static/10b26ddfd55b194f7de5087caade42c8/a5fb7/Nos_Cours_d1f4be.webp"
@@ -181,6 +194,26 @@ export default function TrainingElitesPage() {
           </div>
         </div>
       </div>
+      <Timeline
+        icons={[
+          <img
+            src={oneIcon}
+            key="1"
+            className="w-96 h-96 shadow-md text-gray-700"
+          />,
+          <img
+            src={twoIcon}
+            key="2"
+            className="w-96 h-96 shadow-md text-gray-700"
+          />,
+          <img
+            src={threeIcon}
+            key="3"
+            className="w-96 h-96 shadow-md text-gray-700"
+          />,
+        ]}
+        steps={elitesSteps}
+      />
     </Layout>
   );
 }

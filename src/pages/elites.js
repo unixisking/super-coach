@@ -97,7 +97,7 @@ export default function TrainingElitesPage() {
           Super Coach Training Elites
         </h1>
         <img
-          className="mt-"
+          className="mt-4"
           src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630272225/super-coach/AdobeStock_68575323_oo3eov.png"
           alt=""
         />

@@ -134,7 +134,7 @@ function IndexPage() {
 
       <div id="coaches" className="py-16 bg-black lg:py-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
-          <div className="relative" style={{ width: 305 }}>
+          <div className="relative">
             <h2
               ref={ref}
               className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4"
@@ -225,7 +225,7 @@ function IndexPage() {
       </div>
       <div id="testimonials" className="py-16 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
-          <div className="relative" style={{ width: 500 }}>
+          <div className="relative">
             <h2
               className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4"
               initial="hidden"

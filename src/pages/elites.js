@@ -157,7 +157,7 @@ export default function TrainingElitesPage() {
             <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="lg:col-start-2">
                 <h3 className="text-2xl font-extrabold text-primary tracking-tight sm:text-3xl text-primary">
-                  Always in the loop
+                  Cours personal trainer Lausanne
                 </h3>
                 <p className="mt-3 text-lg text-gray-400">
                   Avec Motivation,Détermination et Sourire! ses programmes de
@@ -194,27 +194,12 @@ export default function TrainingElitesPage() {
           </div>
         </div>
       </div>
+
+      <h2 className="text-4xl text-center text-gray-300 py-16 lg:py-24">
+        Suivez un entraînement sur mesure qui s’adapte à votre condition
+        physique, votre emploi du temps et vos objectifs.
+      </h2>
       <img className="mx-auto" src={StepsImage} alt="" />
-      {/* <Timeline
-        icons={[
-          <img
-            src={oneIcon}
-            key="1"
-            className="w-96 h-96 shadow-md text-gray-700"
-          />,
-          <img
-            src={twoIcon}
-            key="2"
-            className="w-96 h-96 shadow-md text-gray-700"
-          />,
-          <img
-            src={threeIcon}
-            key="3"
-            className="w-96 h-96 shadow-md text-gray-700"
-          />,
-        ]}
-        steps={elitesSteps}
-      /> */}
     </Layout>
   );
 }

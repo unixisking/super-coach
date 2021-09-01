@@ -22,13 +22,13 @@ export default function Navbar() {
         >
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
+              <Link href="/">
                 <img
-                  className="h-8 w-auto sm:h-10"
-                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629622678/super-coach/logo_thpblh.png"
+                  className="w-auto h-24"
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630507519/super-coach/logo-mobile_rq0gxy.png"
                   alt=""
                 />
-              </a>
+              </Link>
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
@@ -70,11 +70,11 @@ export default function Navbar() {
           className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
           <div className="rounded-lg shadow-md bg-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden p-4">
-            <div className="px-5 pt-4 flex items-center justify-between">
+            <div className="pt-4 flex items-center justify-between">
               <div>
                 <img
-                  className="h-8 w-auto"
-                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629622678/super-coach/logo_thpblh.png"
+                  className="h-20 w-20"
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630507519/super-coach/logo-mobile_rq0gxy.png"
                   alt=""
                 />
               </div>

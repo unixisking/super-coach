@@ -2,28 +2,14 @@ import React from 'react';
 
 const footerNavigation = {
   solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+    { name: 'Histoires de Succès', href: '#testimonials' },
+    { name: 'Nos Cours', href: '#courses' },
+    { name: 'Training Elites', href: '/elites' },
+    { name: 'Tarifs', href: '#pricing' },
   ],
   support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'THE COMPETITION STARTS AT TRAINING.', href: '#competition' },
+    { name: 'Cours personal trainer Lausanne', href: '#personal-coach' },
   ],
   social: [
     {
@@ -90,7 +76,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                  Solutions
+                  Coach Lausanne
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {footerNavigation.solutions.map((item) => (
@@ -107,46 +93,10 @@ export default function Footer() {
               </div>
               <div className="mt-12 md:mt-0">
                 <h3 className="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                  Support
+                  Training Elites
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {footerNavigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-warm-gray-400 hover:text-warm-gray-300"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                  Company
-                </h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {footerNavigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-warm-gray-400 hover:text-warm-gray-300"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-warm-gray-200 tracking-wider uppercase">
-                  Legal
-                </h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {footerNavigation.legal.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}

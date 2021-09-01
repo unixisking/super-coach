@@ -12,6 +12,7 @@ import CheckmarkIcon from '../images/icons/check.png';
 // import twoIcon from '../images/icons/two.png';
 // import threeIcon from '../images/icons/three.png';
 import StepsImage from '../images/steps.png';
+import StepsImageMobile from '../images/steps-mobile.png';
 
 const transferFeatures = [
   {
@@ -105,7 +106,7 @@ export default function TrainingElitesPage() {
           Steeve Louissaint, coach & préparateur physique diplômé.
         </h2>
       </div>
-      <div className="py-16 overflow-hidden lg:py-24 mx-auto">
+      <div id="competition" className="py-16 overflow-hidden lg:py-24 mx-auto">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
           <div className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative">
@@ -153,7 +154,10 @@ export default function TrainingElitesPage() {
             </div>
           </div>
 
-          <div className="relative mt-12 sm:mt-16 lg:mt-24">
+          <div
+            id="#personal-coach"
+            className="relative mt-12 sm:mt-16 lg:mt-24"
+          >
             <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="lg:col-start-2">
                 <h3 className="text-2xl font-extrabold text-primary tracking-tight sm:text-3xl text-primary">
@@ -199,7 +203,8 @@ export default function TrainingElitesPage() {
         Suivez un entraînement sur mesure qui s’adapte à votre condition
         physique, votre emploi du temps et vos objectifs.
       </h2>
-      <img className="mx-auto" src={StepsImage} alt="" />
+      <img className="mx-auto hidden lg:block" src={StepsImage} alt="" />
+      <img className="mx-auto block lg:hidden" src={StepsImageMobile} alt="" />
     </Layout>
   );
 }

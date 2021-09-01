@@ -132,7 +132,7 @@ function IndexPage() {
         />
       </CtaSection>
 
-      <div id="coaches" className="py-16 bg-black lg:py-24">
+      <div id="coaches" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
@@ -144,7 +144,7 @@ function IndexPage() {
               <img
                 className="relative mx-auto rounded-lg"
                 width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894409/super-coach/WhatsApp_Image_2021-08-23_at_16.30.25_g6djuz.jpg"
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630508058/super-coach/DSC01308_vxm2al.jpg"
                 alt=""
               />
             </div>
@@ -214,10 +214,10 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div className="py-16 bg-black lg:py-24">
+      <div className="pt-16 bg-black lg:pt-24">
         <Features />
       </div>
-      <div id="testimonials" className="py-16 bg-black">
+      <div id="testimonials" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2
@@ -249,9 +249,9 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div id="courses" className="py-16 lg:py-24 bg-black">
+      <div id="courses" className="pt-16 lg:pt-24 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
-          <div className="relative" style={{ width: 275 }}>
+          <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
               Nos Cours
             </h2>

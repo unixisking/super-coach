@@ -5,15 +5,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import setMinutes from 'date-fns/setMinutes';
-// import addDays from 'date-fns/addDays';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
-// import { RiTimerFlashLine } from 'react-icons/ri';
-// import { BsCalendar } from 'react-icons/bs';
-// import clsx from 'clsx';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -100,7 +96,7 @@ export default function ContactPage() {
       <div className="min-h-screen">
         <main className="overflow-hidden">
           {/* Header */}
-          <div className="mt-32">
+          <div className="mt-16">
             <div className="py-24">
               <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
                 <h1
@@ -117,11 +113,11 @@ export default function ContactPage() {
                   <span className="text-right">DETERMINATION</span>
                   <br /> SOURIRE
                 </h1>
-                <p className="mt-6 text-xl text-gray-400 max-w-3xl">
+                {/* <p className="mt-6 text-xl text-gray-400 max-w-3xl">
                   Vel nunc non ut montes, viverra tempor. Proin lectus nibh
                   phasellus morbi non morbi. In elementum urna ut volutpat.
                   Sagittis et vel et fermentum amet consequat.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -243,8 +239,7 @@ export default function ContactPage() {
                       Contactez-nous
                     </h3>
                     <p className="mt-6 text-base text-teal-50 max-w-3xl">
-                      Nullam risus blandit ac aliquam justo ipsum. Quam mauris
-                      volutpat massa dictumst amet. Sapien tortor lacus arcu.
+                      Contactez-nous en utilisant les informations ci-dessous
                     </p>
                     <dl className="mt-8 space-y-6">
                       <a href="tel:+41796307553">

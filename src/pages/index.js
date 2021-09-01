@@ -135,17 +135,11 @@ function IndexPage() {
       <div id="coaches" className="py-16 bg-black lg:py-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
-            <h2
-              ref={ref}
-              className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4"
-            >
+            <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
               Nos Coachs
             </h2>
           </div>
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
               <img
                 className="relative mx-auto rounded-lg"
@@ -320,10 +314,7 @@ function IndexPage() {
             </div>
           </div>
 
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div
               className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
               aria-hidden="true"
@@ -369,6 +360,59 @@ function IndexPage() {
                 className="relative mx-auto rounded-lg"
                 width={490}
                 src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630207646/super-coach/business_kk41ab.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div
+              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
+              aria-hidden="true"
+            >
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466184/super-coach/speed_dating_c7g0um.png"
+                alt=""
+              />
+            </div>
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                SPEED DATING WORKOUT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Envie d’une l’alternative aux applications de renco- ntres,
+                truffées d’énergumènes ? N’en dites pas plus Nous avons ce qu’il
+                vous faut: Le SPEED DATING WORKOUT, c’est une occasion unique de
+                faire de nouvelles rencontres, dans une ambiance propice aux
+                connexions naturelles. Loin des relations virtuelles, des
+                conversations stériles et autres photos trompeuses, le SPEED
+                DATING WORKOUT réunit les célibataires autour d’une activité
+                fun, dans une ambiance détendue. Et qui sait ? Peut- être que la
+                magie opérera
+              </p>
+            </div>
+          </div>
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                AFTER WORKOUT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Fini les soirées impersonnelles à siroter des mojitos fadasses
+                sur la terrasse ! Pour terminer sa journée sur une note
+                originale et SUPER fun, l’AFTER WORKOUT vous invite à l’apéro
+                detox, suivi d’un workout endiablé dans une ambiance de feu !
+                L’AFTER WORKOUT est un concept inédit en Suisse mais surtout,
+                c’est définitivement une expérience à vivre entre amis ou
+                collègues.
+              </p>
+            </div>
+            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466180/super-coach/after_workout_xelhap.png"
                 alt=""
               />
             </div>

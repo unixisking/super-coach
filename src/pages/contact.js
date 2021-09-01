@@ -4,7 +4,8 @@ import { RadioGroup } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import addDays from 'date-fns/addDays';
+import setMinutes from 'date-fns/setMinutes';
+// import addDays from 'date-fns/addDays';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -17,6 +18,8 @@ import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '../components/navbar';
+
+import WORK_HOURS from '../constants/work_hours';
 
 const choices = [
   {
@@ -71,8 +74,8 @@ export default function ContactPage() {
   });
   const [workoutType, setWorkoutType] = useState('public');
   const [workout, setWorkout] = useState('Full Body');
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(setMinutes(new Date(), 0));
+  const [endDate, setEndDate] = useState(setMinutes(new Date(), 30));
   const offices = [
     {
       id: 1,
@@ -563,10 +566,11 @@ export default function ContactPage() {
                               value={startDate}
                               selected={startDate}
                               onChange={(date) => setStartDate(date)}
-                              minDate={new Date()}
-                              minTime={new Date().getTime()}
-                              maxTime={addDays(new Date(), 1)}
-                              maxDate={addDays(new Date(), 90)}
+                              includeTimes={WORK_HOURS.slice(0, -1)}
+                              // minDate={new Date()}
+                              // minTime={new Date().getTime()}
+                              // maxTime={addDays(new Date(), 1)}
+                              // maxDate={addDays(new Date(), 90)}
                             />
                           </div>
                           <div className="relative z-20">
@@ -586,8 +590,9 @@ export default function ContactPage() {
                               value={endDate}
                               selected={endDate}
                               onChange={(date) => setEndDate(date)}
-                              minDate={new Date()}
-                              maxDate={addDays(new Date(), 90)}
+                              // minDate={new Date()}
+                              // maxDate={addDays(new Date(), 90)}
+                              includeTimes={WORK_HOURS}
                             />
                           </div>
                         </>

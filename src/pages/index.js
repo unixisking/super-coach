@@ -393,7 +393,7 @@ function IndexPage() {
               </p>
             </div>
           </div>
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center pb-16">
             <div className="relative">
               <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
                 AFTER WORKOUT

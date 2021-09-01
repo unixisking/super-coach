@@ -9,6 +9,8 @@ import SEO from '../components/seo';
 
 import HeroVideo from '../videos/hero-video.mp4';
 import Features from '../components/Features';
+import Pricing from '../components/pricing';
+import Navbar from '../components/navbar';
 
 const header = 'Super Coach ';
 const highlighted = 'Lausanne';
@@ -80,6 +82,9 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
       />
+      <div className="z-30 lg:absolute w-full">
+        <Navbar />
+      </div>
 
       <div className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20 hidden lg:block" />
       <video autoPlay muted loop className=" top-0 w-screen hidden lg:block">
@@ -91,7 +96,7 @@ function IndexPage() {
         transition={{ delay: 1, from: { y: -10000 }, to: { y: 0 } }}
       >
         <motion.h1
-          className="text-4xl md:text-5xl mt-24 lg:mt-0 lg:text-6xl text-white"
+          className="text-4xl md:text-5xl mt-24 lg:mt-0 lg:text-7xl text-white"
           variants={sentence}
           initial="hidden"
           animate="visible"
@@ -111,12 +116,12 @@ function IndexPage() {
             </motion.span>
           ))}
         </motion.h1>
-        <p className="text-white mt-8">
+        <p className="text-xl lg:text-2xl text-white mt-8">
           Nos séances sont tellement cool que 100% des personnes qui ont
           participé à une séance d’essai ont suivi des cours par la suite avec
           nos coachs.
         </p>
-        <p className="text-white">
+        <p className="text-xl lg:text-2xl text-white">
           N’attendez plus, réservez votre séance d’essai{' '}
           <span className="text-primary">gratuite</span> maintenant.
         </p>
@@ -127,86 +132,24 @@ function IndexPage() {
         />
       </CtaSection>
 
-      <div className="py-16 bg-black lg:py-24 border-b-2 border-gray-900">
+      <div id="coaches" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
-          <div className="relative" style={{ width: 305 }}>
-            <h2
-              ref={ref}
-              className="text-left text-3xl leading-8 font-medium tracking-tight sm:text-6xl border-b-4 pb-4 border-primary"
-              initial="hidden"
-              animate={controls}
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1.5,
-              }}
-              variants={{
-                visible: { x: 0 },
-                hidden: { x: -1000 },
-              }}
-              style={{
-                background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                borderColor: '#dcb6bd',
-              }}
-            >
+          <div className="relative">
+            <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
               Nos Coachs
             </h2>
           </div>
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
-            <div
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 2,
-              }}
-              className="mt-10 -mx-4 relative lg:mt-0"
-              aria-hidden="true"
-            >
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
               <img
                 className="relative mx-auto rounded-lg"
                 width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894409/super-coach/WhatsApp_Image_2021-08-23_at_16.30.25_g6djuz.jpg"
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630508058/super-coach/DSC01308_vxm2al.jpg"
                 alt=""
               />
             </div>
-            <div
-              className="relative"
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
-              <h3
-                style={{
-                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
-              >
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
                 Steeve Luissaint
               </h3>
               <p className="mt-3 text-lg text-gray-400">
@@ -228,30 +171,8 @@ function IndexPage() {
             ref={ref}
             className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
           >
-            <div
-              className="relative"
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
-              <h3
-                style={{
-                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
-              >
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl ">
                 Rebecca Luissaint
               </h3>
               <p className="mt-3 text-lg text-gray-400">
@@ -293,33 +214,15 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div className="py-16 bg-black lg:py-24">
+      <div className="pt-16 bg-black lg:pt-24">
         <Features />
       </div>
-      <div className="py-16 lg:py-24 bg-black border-t-2 border-gray-900">
+      <div id="testimonials" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
-          <div className="relative" style={{ width: 500 }}>
+          <div className="relative">
             <h2
-              ref={ref}
-              className="text-left text-3xl leading-8 font-medium tracking-tight sm:text-6xl border-b-4 pb-4 border-primary"
+              className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4"
               initial="hidden"
-              animate={controls}
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1.5,
-              }}
-              variants={{
-                visible: { x: 0 },
-                hidden: { x: -1000 },
-              }}
-              style={{
-                background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                borderColor: '#dcb6bd',
-              }}
             >
               Histoires de Succès
             </h2>
@@ -346,53 +249,19 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div className="py-16 lg:py-24 bg-black border-t-2 border-gray-900">
+      <div id="courses" className="pt-16 lg:pt-24 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
-          <div className="relative" style={{ width: 275 }}>
-            <h2
-              ref={ref}
-              className="text-left text-3xl leading-8 font-medium tracking-tight sm:text-6xl border-b-4 pb-4 border-primary"
-              initial="hidden"
-              animate={controls}
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1.5,
-              }}
-              variants={{
-                visible: { x: 0 },
-                hidden: { x: -1000 },
-              }}
-              style={{
-                background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                borderColor: '#dcb6bd',
-              }}
-            >
+          <div className="relative">
+            <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
               Nos Cours
             </h2>
           </div>
           <div
             ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center"
           >
             <div
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 2,
-              }}
-              className="mt-10 -mx-4 relative lg:mt-0"
+              className="mt-10 -mx-4 relative lg:mt-0 col-start-2 sm:col-start-1 hidden sm:block"
               aria-hidden="true"
             >
               <img
@@ -402,30 +271,8 @@ function IndexPage() {
                 alt=""
               />
             </div>
-            <div
-              className="relative"
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
-              <h3
-                style={{
-                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
-              >
+            <div className="relative col-start-1 lg:col-start-2">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
                 FULL BODY WORKOUT
               </h3>
               <p className="mt-3 text-lg text-gray-400">
@@ -443,30 +290,8 @@ function IndexPage() {
             ref={ref}
             className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
           >
-            <div
-              className="relative"
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
-              <h3
-                style={{
-                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
-              >
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
                 CARDIO STEP
               </h3>
               <p className="mt-3 text-lg text-gray-400">
@@ -477,20 +302,7 @@ function IndexPage() {
               </p>
             </div>
             <div
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 2,
-              }}
-              className="mt-10 -mx-4 relative lg:mt-0"
+              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
               aria-hidden="true"
             >
               <img
@@ -502,25 +314,9 @@ function IndexPage() {
             </div>
           </div>
 
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 2,
-              }}
-              className="mt-10 -mx-4 relative lg:mt-0"
+              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
               aria-hidden="true"
             >
               <img
@@ -530,30 +326,8 @@ function IndexPage() {
                 alt=""
               />
             </div>
-            <div
-              className="relative"
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 1.5,
-              }}
-            >
-              <h3
-                style={{
-                  background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-                className="text-2xl font-extrabold text-gray-200 tracking-tight sm:text-3xl"
-              >
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
                 BOOTY SCULPT
               </h3>
               <p className="mt-3 text-lg text-gray-400">
@@ -565,8 +339,87 @@ function IndexPage() {
               </p>
             </div>
           </div>
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                BUSINESS WORKOUT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Quelle est la plus grande qualité d’un entrepreneur? Une
+                motivation en béton, au quotidien.Et pour bien démarrer sa
+                journée d’entrepreneur, le BUSINESS WORKOUT vous invite à une
+                séance de sport matinal. Après l’effort, un petit-déjeuner
+                healty est servi chacun a 2 minutes chrono pour présenter son
+                business ou ses services. De bon matin, connexions, réseautage
+                et good vibes guaranties l’avenir appartient à ceux qui se
+                lèvent avant tout lemonde !
+              </p>
+            </div>
+            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630207646/super-coach/business_kk41ab.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div
+              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
+              aria-hidden="true"
+            >
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466184/super-coach/speed_dating_c7g0um.png"
+                alt=""
+              />
+            </div>
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                SPEED DATING WORKOUT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Envie d’une l’alternative aux applications de renco- ntres,
+                truffées d’énergumènes ? N’en dites pas plus Nous avons ce qu’il
+                vous faut: Le SPEED DATING WORKOUT, c’est une occasion unique de
+                faire de nouvelles rencontres, dans une ambiance propice aux
+                connexions naturelles. Loin des relations virtuelles, des
+                conversations stériles et autres photos trompeuses, le SPEED
+                DATING WORKOUT réunit les célibataires autour d’une activité
+                fun, dans une ambiance détendue. Et qui sait ? Peut- être que la
+                magie opérera
+              </p>
+            </div>
+          </div>
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="relative">
+              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                AFTER WORKOUT
+              </h3>
+              <p className="mt-3 text-lg text-gray-400">
+                Fini les soirées impersonnelles à siroter des mojitos fadasses
+                sur la terrasse ! Pour terminer sa journée sur une note
+                originale et SUPER fun, l’AFTER WORKOUT vous invite à l’apéro
+                detox, suivi d’un workout endiablé dans une ambiance de feu !
+                L’AFTER WORKOUT est un concept inédit en Suisse mais surtout,
+                c’est définitivement une expérience à vivre entre amis ou
+                collègues.
+              </p>
+            </div>
+            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+              <img
+                className="relative mx-auto rounded-lg"
+                width={490}
+                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466180/super-coach/after_workout_xelhap.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
+      <Pricing />
     </Layout>
   );
 }
@@ -574,13 +427,13 @@ function IndexPage() {
 const CtaSection = styled(motion.div)`
   text-align: center;
 
-  @media (min-width: 992px) {
+  @media (min-width: 1024px) {
     z-index: 30;
     top: 50%;
     left: 50%;
     height: 300px;
-    width: 1100px;
-    margin-left: -550px;
+    width: 1024px;
+    margin-left: -512px;
     margin-top: -150px;
   }
 `;

@@ -69,6 +69,7 @@ const features = [
 function IndexPage() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [secondSectionRef, isInView] = useInView();
 
   useEffect(() => {
     async function animate() {
@@ -78,7 +79,7 @@ function IndexPage() {
     }
     animate();
   }, [controls, inView]);
-  console.log(inView);
+  console.log(isInView);
   return (
     <Layout>
       <SEO
@@ -140,7 +141,7 @@ function IndexPage() {
       </CtaSection>
 
       <div className="pt-16 bg-black lg:pt-24">
-        <Features />
+        <Features ref={secondSectionRef} />
       </div>
 
       <div id="coaches" className="pt-16 bg-black lg:pt-24 z-20">
@@ -452,7 +453,7 @@ const CtaSection = styled(motion.div)`
   text-align: center;
 
   @media (min-width: 1024px) {
-    z-index: 30;
+    z-index: 20;
     top: 50%;
     left: 50%;
     height: 300px;

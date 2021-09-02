@@ -16,16 +16,15 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '../components/navbar';
 
 import WORK_HOURS from '../constants/work_hours';
+import { addMinutes } from 'date-fns';
 
 const choices = [
   {
-    name: 'Public access',
-    description: 'This project would be available to anyone who has the link',
+    name: 'Cours collectifs',
     value: 'public',
   },
   {
-    name: 'Private to Project Members',
-    description: 'Only members of this project would be able to access',
+    name: 'Cours privés',
     value: 'private',
   },
 ];
@@ -50,10 +49,7 @@ function classNames(...classes) {
 }
 
 const schema = Yup.object({
-  firstName: Yup.string()
-    .max(15, 'Must be 15 characters or less')
-    .required('Required'),
-  lastName: Yup.string()
+  name: Yup.string()
     .max(15, 'Must be 15 characters or less')
     .required('Required'),
   email: Yup.string().email('Invalid email address').required('Required'),
@@ -315,12 +311,12 @@ export default function ContactPage() {
                       onSubmit={handleSubmit(onSubmit)}
                       className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                     >
-                      <div>
+                      <div className="col-span-2">
                         <label
-                          htmlFor="first-name"
+                          htmlFor="name"
                           className="block text-sm font-medium text-warm-gray-900"
                         >
-                          Prénom
+                          Nom
                         </label>
                         <div className="mt-1">
                           <input
@@ -329,23 +325,7 @@ export default function ContactPage() {
                             {...register('firstName', { required: true })}
                             id="first-name"
                             autoComplete="given-name"
-                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="last-name"
-                          className="block text-sm font-medium text-warm-gray-900"
-                        >
-                          Nom
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            type="text"
-                            {...register('lastName', { required: true })}
-                            autoComplete="family-name"
-                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-primary focus:border-primary border-warm-gray-300 rounded-md"
                           />
                         </div>
                       </div>
@@ -362,7 +342,7 @@ export default function ContactPage() {
                             {...register('email', { required: true })}
                             type="email"
                             autoComplete="email"
-                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-primary focus:border-primary border-warm-gray-300 rounded-md"
                           />
                         </div>
                       </div>
@@ -380,7 +360,7 @@ export default function ContactPage() {
                             type="text"
                             {...register('phone', { required: true })}
                             autoComplete="tel"
-                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
+                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-primary focus:border-primary border-warm-gray-300 rounded-md"
                             aria-describedby="phone-optional"
                           />
                         </div>
@@ -446,7 +426,7 @@ export default function ContactPage() {
                                       >
                                         {setting.name}
                                       </RadioGroup.Label>
-                                      <RadioGroup.Description
+                                      {/* <RadioGroup.Description
                                         as="span"
                                         className={classNames(
                                           checked
@@ -455,8 +435,7 @@ export default function ContactPage() {
                                           'block text-sm',
                                         )}
                                       >
-                                        {setting.value}
-                                      </RadioGroup.Description>
+                                      </RadioGroup.Description> */}
                                     </div>
                                   </>
                                 )}
@@ -550,7 +529,7 @@ export default function ContactPage() {
                                 htmlFor="date"
                                 className="block text-sm font-medium text-warm-gray-900"
                               >
-                                Start Date
+                                Début de séance
                               </label>
                             </div>
                             <DatePicker
@@ -574,7 +553,7 @@ export default function ContactPage() {
                                 htmlFor="date"
                                 className="block text-sm font-medium text-warm-gray-900"
                               >
-                                end Date
+                                Fin de séance
                               </label>
                             </div>
                             <DatePicker
@@ -583,8 +562,9 @@ export default function ContactPage() {
                               className="mt-4 border-primary z-30 w-full"
                               id="date"
                               value={endDate}
-                              selected={endDate}
+                              selected={addMinutes(startDate, 30)}
                               onChange={(date) => setEndDate(date)}
+                              disabled
                               // minDate={new Date()}
                               // maxDate={addDays(new Date(), 90)}
                               includeTimes={WORK_HOURS}

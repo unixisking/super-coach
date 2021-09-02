@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Button from './Button';
+import clsx from 'clsx';
 
 const navigation = [
   { name: 'Coach Lausanne', to: '/' },
@@ -14,9 +15,25 @@ const navigation = [
 ];
 
 export default function Navbar() {
+  const [isFixed, setIsFixed] = useState(false);
+  const handleScroll = (value) => setIsFixed(value);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    if (window.scrollY === 0) {
+      handleScroll(false);
+    }
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [window, handleScroll]);
   return (
     <Popover>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12">
+      <div
+        className={clsx('z-50 mx-auto px-4 sm:px-6', {
+          'fixed w-full bg-gradient-to-r from-primary to-red-500 top-0 py-6 shadow-lg':
+            isFixed,
+          'py-6': !isFixed,
+        })}
+      >
         <nav
           className="relative flex items-center justify-between sm:h-10 md:justify-center"
           aria-label="Global"
@@ -43,7 +60,9 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.to}
-                className="font-medium text-gray-200 hover:text-primary hover:underline"
+                className={clsx('font-medium text-gray-200  hover:underline', {
+                  'hover:text-primary': !isFixed,
+                })}
               >
                 {item.name}
               </Link>
@@ -68,7 +87,7 @@ export default function Navbar() {
       >
         <Popover.Panel
           focus
-          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50"
         >
           <div className="rounded-lg shadow-md bg-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden p-4">
             <div className="pt-4 flex items-center justify-between">

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
@@ -14,6 +14,8 @@ import Navbar from '../components/navbar';
 
 import StepsImage from '../images/steps.png';
 import StepsImageMobile from '../images/steps-mobile.png';
+import CoachVideo from '../videos/coach-video.mp4';
+import { Dialog, Transition } from '@headlessui/react';
 
 const header = 'Coach Sportif ';
 const highlighted = 'Lausanne';
@@ -70,6 +72,7 @@ function IndexPage() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const [secondSectionRef, isInView] = useInView();
+  const [isVideoShown, setIsVideoShown] = useState(false);
 
   useEffect(() => {
     async function animate() {
@@ -144,6 +147,75 @@ function IndexPage() {
         <Features ref={secondSectionRef} />
       </div>
 
+      <Transition appear show={isVideoShown} as={Fragment}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-10 overflow-y-auto"
+          onClose={() => setIsVideoShown(false)}
+        >
+          <div className="min-h-screen px-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay className="fixed inset-0" />
+            </Transition.Child>
+
+            {/* This element is to trick the browser into centering the modal contents. */}
+            <span
+              className="inline-block h-screen align-middle"
+              aria-hidden="true"
+            >
+              &#8203;
+            </span>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                <Dialog.Title
+                  as="h3"
+                  className="text-lg font-medium leading-6 text-gray-900"
+                >
+                  Une vidéo qui résume bien notre vibe
+                </Dialog.Title>
+                <div className="mt-2">
+                  <video
+                    width="490"
+                    className="mx-auto"
+                    preload="none"
+                    controls
+                  >
+                    <source src={CoachVideo} type="video/mp4" />
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
+
+                <button />
+                {/* <div className="mt-4">
+                  <button
+                    type="button"
+                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-red-500 border border-transparent rounded-md hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
+                    onClick={() => setIsVideoShown(false)}
+                  >
+                    Fermer
+                  </button>
+                </div> */}
+              </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
       <div id="coaches" className="pt-16 bg-black lg:pt-24 z-20">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
@@ -176,6 +248,12 @@ function IndexPage() {
                 Training font brûler des calories, dans une ambiance
                 bienveillante et foncièrement positive.
               </p>
+              <button onClick={() => setIsVideoShown(true)}>
+                <Button
+                  style={{ marginTop: '1.5rem' }}
+                  text="Regardez la vidéo de Steeve"
+                />
+              </button>
             </div>
           </div>
 

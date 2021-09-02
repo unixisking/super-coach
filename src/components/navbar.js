@@ -10,7 +10,6 @@ const navigation = [
   { name: 'Histoires de Succès', to: '#testimonials' },
   { name: 'Cours collectifs', to: '#courses' },
   { name: 'Cours privés', to: '#courses' },
-  { name: 'Training Elites', to: '/elites' },
   { name: 'Tarifs', to: '#pricing' },
 ];
 

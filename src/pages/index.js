@@ -89,7 +89,10 @@ function IndexPage() {
         <Navbar />
       </div>
 
-      <div className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20 hidden lg:block" />
+      <div
+        className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20 hidden lg:block"
+        style={{ height: window.outerHeight }}
+      />
       <video autoPlay muted loop className=" top-0 w-screen hidden lg:block">
         <source src={HeroVideo} type="video/mp4" />
         Your browser does not support HTML5 video.
@@ -140,7 +143,7 @@ function IndexPage() {
         <Features />
       </div>
 
-      <div id="coaches" className="pt-16 bg-black lg:pt-24">
+      <div id="coaches" className="pt-16 bg-black lg:pt-24 z-20">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">

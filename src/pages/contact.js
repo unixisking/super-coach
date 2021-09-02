@@ -659,7 +659,7 @@ export default function ContactPage() {
                 id="offices-heading"
                 className="text-3xl font-extrabold text-gray-300"
               >
-                Our offices
+                localisation de notre salle de sport
               </h2>
               <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {offices.map((office) => (

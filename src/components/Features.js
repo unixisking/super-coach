@@ -11,7 +11,8 @@ const features = [
     icon: BiHappyBeaming,
   },
   {
-    description: 'Des cours de sport collectifs et abordables',
+    description:
+      'Des cours de sport Privés ou collectifs à des prix abordables',
     icon: IoIosPeople,
   },
   {
@@ -26,7 +27,7 @@ export default function Features() {
     <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
       <div className="relative" style={{ width: 550 }}>
         <h2
-          className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4"
+          className="text-left text-3xl text-primary leading-8 font-medium tracking-tight pb-4"
           initial="hidden"
         >
           Super Coach c&apos;est ...

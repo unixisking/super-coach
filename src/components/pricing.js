@@ -10,9 +10,9 @@ const pricingChoice = {
       priceMonthly: 25,
       description: 'Chaque lundi à 18h45',
       includedFeatures: [
-        'conçue pour raffermir la silhouette et brûler des calories',
+        'Conçue pour raffermir la silhouette et brûler des calories',
         'Ouvert aux débutantes et à tous les niveaux',
-        'parfait pour tonifier le corps de la tête aux pieds',
+        'Parfait pour tonifier le corps de la tête aux pieds',
       ],
     },
     {
@@ -21,10 +21,10 @@ const pricingChoice = {
       priceMonthly: 25,
       description: 'chaque mardi à 19 heures.',
       includedFeatures: [
-        'brûler un maximum de calories pendant notre cours CARDIO STEP',
+        'Brûler un maximum de calories pendant notre cours CARDIO STEP',
         'Transpirer et se défouler avec le sourire et du bon son',
         'Ouvert aux débutantes et à tous les niveaux',
-        'fondre les kilos pendant 45 minutes EXPLOSIVES!',
+        'Fondre les kilos pendant 45 minutes EXPLOSIVES!',
       ],
     },
     {
@@ -34,7 +34,7 @@ const pricingChoice = {
       description: 'Chaque jeudi à 19h45',
       includedFeatures: [
         '60 minutes hebdomadaires,parfaites pour combattre la cellulite',
-        'un fessier ferme et bien dessiné',
+        'Un fessier ferme et bien dessiné',
         'Ouvert aux débutantes et à tous les niveaux',
       ],
     },
@@ -42,11 +42,33 @@ const pricingChoice = {
       name: 'BUSINESS WORKOUT',
       href: '/contact',
       priceMonthly: 25,
-      description: 'faire de nouvelles connaissances',
+      description: 'Faire de nouvelles connaissances',
       includedFeatures: [
-        'chacun a 2 minutes chrono pour présenter son business ou ses services',
-        'cibler les muscles ayant perdu leur capacité contractile.',
-        'connexions,réseautage et good vibes garanties',
+        'Séance de sport matinale',
+        'Chacun a 2 minutes chrono pour présenter son business ou ses services',
+        'Connexions,réseautage et good vibes garanties',
+      ],
+    },
+    {
+      name: 'SPEED DATING WORKOUT',
+      href: '/contact',
+      priceMonthly: 25,
+      description: 'Faire de nouvelles rencontres',
+      includedFeatures: [
+        'Le SPEED DATING WORKOUT réunit les célibataires autour d’une activité fun, dans une ambiance détendue.',
+        'Faire des connaissances naturelles, loin des relations virtuelles, des conversations stériles et autres photos trompeuses.',
+        'Une bonne alternative aux applications de rencontre.',
+      ],
+    },
+    {
+      name: 'AFTER WORKOUT',
+      href: '/contact',
+      priceMonthly: 25,
+      description: 'Une journée originale',
+      includedFeatures: [
+        'Un workout endiablé dans une ambiance de feu',
+        'Une fin de journée spéciale et originale avec une invitation à l’apéro detox.',
+        'L’AFTER WORKOUT est un concept inédit en Suisse mais surtout, c’est définitivement une expérience à vivre entre amis ou collègues.',
       ],
     },
   ],
@@ -57,53 +79,53 @@ const pricingChoice = {
       priceMonthly: 65,
       description: 'Une séance de 60min',
       includedFeatures: [
-        'l’athlète réalise destests: ses désquilibres musculaires sont identifiés.',
-        'cibler les muscles ayant perdu leur capacité contractile.',
-        'Programme sur mesure,destiné à améliorer sa performance et résoudre les faiblesses musculaires identifiées.',
-        'Profond renforcement musculaire.',
+        "Accès à une salle de sports complètement privatisé pour vos séances d'entrainement.",
+        'Réalisations des tests pour identifier vos déséquilibres musculaires.',
+        'Renforcement musculaire.',
+        'Entrainement sur mesure destiné à améliorer vos performance globales.',
       ],
     },
     {
       name: 'Pack Bronze',
       href: '/contact',
       priceMonthly: 60,
-      description: 'Ce pack comporte un total de 10 séances',
+      description: 'Un total de 10 séances',
       includedFeatures: [
-        'l’athlète réalise destests: ses désquilibres musculaires sont identifiés.',
-        'cibler les muscles ayant perdu leur capacité contractile.',
-        'Programme sur mesure,destiné à améliorer sa performance et résoudre les faiblesses musculaires identifiées.',
-        'Profond renforcement musculaire.',
+        "Accès à une salle de sports complètement privatisé pour vos séances d'entrainement.",
+        'Réalisations des tests pour identifier vos déséquilibres musculaires.',
+        'Renforcement musculaire.',
+        'Entrainement sur mesure destiné à améliorer vos performance globales.',
       ],
     },
     {
       name: 'Pack Argent',
       href: '/contact',
       priceMonthly: 55,
-      description: 'Ce pack comporte un total de 25 séances',
+      description: 'Un total de 25 séances',
       includedFeatures: [
-        'l’athlète réalise destests: ses désquilibres musculaires sont identifiés.',
-        'cibler les muscles ayant perdu leur capacité contractile.',
-        'Programme sur mesure,destiné à améliorer sa performance et résoudre les faiblesses musculaires identifiées.',
-        'Profond renforcement musculaire.',
+        "Accès à une salle de sports complètement privatisé pour vos séances d'entrainement.",
+        'Réalisations des tests pour identifier vos déséquilibres musculaires.',
+        'Renforcement musculaire.',
+        'Entrainement sur mesure destiné à améliorer vos performance globales.',
       ],
     },
     {
       name: 'Pack Or',
       href: '/contact',
       priceMonthly: 50,
-      description: 'Ce pack comporte un total de 50 séances',
+      description: 'Un total de 50 séances',
       includedFeatures: [
-        'l’athlète réalise destests: ses désquilibres musculaires sont identifiés.',
-        'cibler les muscles ayant perdu leur capacité contractile.',
-        'Programme sur mesure,destiné à améliorer sa performance et résoudre les faiblesses musculaires identifiées.',
-        'Profond renforcement musculaire.',
+        "Accès à une salle de sports complètement privatisé pour vos séances d'entrainement.",
+        'Réalisations des tests pour identifier vos déséquilibres musculaires.',
+        'Renforcement musculaire.',
+        'Entrainement sur mesure destiné à améliorer vos performance globales.',
       ],
     },
   ],
 };
 
 export default function Pricing() {
-  const [pricesType, setPricesType] = useState('public');
+  const [pricesType, setPricesType] = useState('private');
   return (
     <div id="pricing" className="bg-white">
       <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
@@ -112,6 +134,16 @@ export default function Pricing() {
             Tarifs
           </h1>
           <div className="relative self-center mt-6 bg-gray-100 rounded-lg p-0.5 flex sm:mt-8">
+            <button
+              type="button"
+              onClick={() => setPricesType('private')}
+              className={clsx(
+                'ml-0.5 relative w-1/2 border border-transparent rounded-md py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:z-10 sm:w-auto sm:px-8',
+                { 'text-white bg-primary': pricesType === 'private' },
+              )}
+            >
+              Séances privées
+            </button>
             <button
               type="button"
               onClick={() => setPricesType('public')}
@@ -124,17 +156,7 @@ export default function Pricing() {
                 },
               )}
             >
-              Sessions publiques
-            </button>
-            <button
-              type="button"
-              onClick={() => setPricesType('private')}
-              className={clsx(
-                'ml-0.5 relative w-1/2 border border-transparent rounded-md py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:z-10 sm:w-auto sm:px-8',
-                { 'text-white bg-primary': pricesType === 'private' },
-              )}
-            >
-              Sessions privées
+              Séances collectives
             </button>
           </div>
         </div>

@@ -3,7 +3,8 @@ import React from 'react';
 const footerNavigation = {
   solutions: [
     { name: 'Histoires de Succès', href: '#testimonials' },
-    { name: 'Nos Cours', href: '#courses' },
+    { name: 'Cours collectifs', href: '#courses' },
+    { name: 'Cours privés', href: '#courses' },
     { name: 'Training Elites', href: '/elites' },
     { name: 'Tarifs', href: '#pricing' },
   ],

@@ -7,7 +7,8 @@ import Button from './Button';
 const navigation = [
   { name: 'Coach Lausanne', to: '/' },
   { name: 'Histoires de Succès', to: '#testimonials' },
-  { name: 'Nos Cours', to: '#courses' },
+  { name: 'Cours collectifs', to: '#courses' },
+  { name: 'Cours privés', to: '#courses' },
   { name: 'Training Elites', to: '/elites' },
   { name: 'Tarifs', to: '#pricing' },
 ];

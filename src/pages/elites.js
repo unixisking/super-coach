@@ -11,8 +11,6 @@ import CheckmarkIcon from '../images/icons/check.png';
 // import oneIcon from '../images/icons/one.png';
 // import twoIcon from '../images/icons/two.png';
 // import threeIcon from '../images/icons/three.png';
-import StepsImage from '../images/steps.png';
-import StepsImageMobile from '../images/steps-mobile.png';
 
 const transferFeatures = [
   {
@@ -198,13 +196,6 @@ export default function TrainingElitesPage() {
           </div>
         </div>
       </div>
-
-      <h2 className="text-2xl mx-4 lg:text-4xl text-center text-gray-300 py-16 lg:py-24">
-        Suivez un entraînement sur mesure qui s’adapte à votre condition
-        physique, votre emploi du temps et vos objectifs.
-      </h2>
-      <img className="mx-auto hidden lg:block" src={StepsImage} alt="" />
-      <img className="mx-auto block lg:hidden" src={StepsImageMobile} alt="" />
     </Layout>
   );
 }

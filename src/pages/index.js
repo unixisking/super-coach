@@ -12,7 +12,10 @@ import Features from '../components/Features';
 import Pricing from '../components/pricing';
 import Navbar from '../components/navbar';
 
-const header = 'Super Coach ';
+import StepsImage from '../images/steps.png';
+import StepsImageMobile from '../images/steps-mobile.png';
+
+const header = 'Coach Sportif ';
 const highlighted = 'Lausanne';
 const sentence = {
   hidden: { opacity: 1 },
@@ -117,9 +120,10 @@ function IndexPage() {
           ))}
         </motion.h1>
         <p className="text-xl lg:text-2xl text-white mt-8">
-          Nos séances sont tellement cool que 100% des personnes qui ont
-          participé à une séance d’essai ont suivi des cours par la suite avec
-          nos coachs.
+          Satisfait, 100% des participants à la séance d’essai ont réservé
+          plusieurs séances de coaching par la suite. Super Coach vous aide à
+          prendre votre corps en main, à transpirer dans la bonne humeur et de
+          conserver la santé à vie.
         </p>
         <p className="text-xl lg:text-2xl text-white">
           N’attendez plus, réservez votre séance d’essai{' '}
@@ -128,9 +132,13 @@ function IndexPage() {
         <Button
           to="/contact"
           style={{ marginTop: '1.5rem' }}
-          text="Je réserve"
+          text="Je réserve une séance d'essai"
         />
       </CtaSection>
+
+      <div className="pt-16 bg-black lg:pt-24">
+        <Features />
+      </div>
 
       <div id="coaches" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
@@ -150,7 +158,7 @@ function IndexPage() {
             </div>
             <div className="relative">
               <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
-                Steeve Luissaint
+                Steeve Louissaint
               </h3>
               <p className="mt-3 text-lg text-gray-400">
                 C’est le coach préféré des Romand·e·s ! Au terme de sa carrière
@@ -173,7 +181,7 @@ function IndexPage() {
           >
             <div className="relative">
               <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl ">
-                Rebecca Luissaint
+                Rebecca Louissaint
               </h3>
               <p className="mt-3 text-lg text-gray-400">
                 Derrière chaque coach accompli, il y a...une femme qui l’est
@@ -214,9 +222,6 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div className="pt-16 bg-black lg:pt-24">
-        <Features />
-      </div>
       <div id="testimonials" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
@@ -253,13 +258,10 @@ function IndexPage() {
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
-              Nos Cours
+              Cours collectifs
             </h2>
           </div>
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center"
-          >
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center">
             <div
               className="mt-10 -mx-4 relative lg:mt-0 col-start-2 sm:col-start-1 hidden sm:block"
               aria-hidden="true"
@@ -417,6 +419,25 @@ function IndexPage() {
               />
             </div>
           </div>
+        </div>
+      </div>
+      <div id="courses" className="pt-16 lg:pt-24 bg-black">
+        <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
+          <div className="relative">
+            <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
+              Cours privés
+            </h2>
+          </div>
+          <h2 className="text-2xl mx-4 lg:text-4xl text-center text-gray-300 py-16 lg:py-24">
+            Suivez un entraînement sur mesure qui s’adapte à votre condition
+            physique, votre emploi du temps et vos objectifs.
+          </h2>
+          <img className="mx-auto hidden lg:block" src={StepsImage} alt="" />
+          <img
+            className="mx-auto block lg:hidden"
+            src={StepsImageMobile}
+            alt=""
+          />
         </div>
       </div>
       <Pricing />

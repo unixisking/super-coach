@@ -90,7 +90,7 @@ export default function TrainingElitesPage() {
         setIsNavbarFixed(true);
       }
     }
-  }, [window.scrollY]);
+  });
   return (
     <Layout>
       {/* <SEO

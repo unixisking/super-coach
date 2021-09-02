@@ -95,7 +95,7 @@ function IndexPage() {
 
       <div
         className="bg-black bg-opacity-70 absolute w-full h-screen top-0 z-20 hidden lg:block"
-        style={{ height: window.outerHeight }}
+        style={{ height: '900px' }}
       />
       <video autoPlay muted loop className=" top-0 w-screen hidden lg:block">
         <source src={HeroVideo} type="video/mp4" />

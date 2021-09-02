@@ -99,7 +99,7 @@ function IndexPage() {
         transition={{ delay: 1, from: { y: -10000 }, to: { y: 0 } }}
       >
         <motion.h1
-          className="text-4xl md:text-5xl mt-24 lg:mt-0 lg:text-7xl text-white"
+          className="text-4xl md:text-5xl mt-24 lg:mt-0 lg:text-7xl text-white font-extrabold"
           variants={sentence}
           initial="hidden"
           animate="visible"

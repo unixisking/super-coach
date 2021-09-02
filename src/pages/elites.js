@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../components/layout';
 import Navbar from '../components/navbar';
 
@@ -6,11 +6,7 @@ import FootballIcon from '../images/icons/football.png';
 import BasketballIcon from '../images/icons/basketball.png';
 import SprintIcon from '../images/icons/sprint.png';
 import CheckmarkIcon from '../images/icons/check.png';
-// import Timeline from '../components/Timeline';
-
-// import oneIcon from '../images/icons/one.png';
-// import twoIcon from '../images/icons/two.png';
-// import threeIcon from '../images/icons/three.png';
+import clsx from 'clsx';
 
 const transferFeatures = [
   {
@@ -82,7 +78,19 @@ const communicationFeatures = [
 //   },
 // ];
 
+const isBrowser = typeof window !== 'undefined';
+
 export default function TrainingElitesPage() {
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+  useEffect(() => {
+    if (isBrowser) {
+      if (window.scrollY === 0) {
+        setIsNavbarFixed(false);
+      } else {
+        setIsNavbarFixed(true);
+      }
+    }
+  }, window.scrollY);
   return (
     <Layout>
       {/* <SEO
@@ -92,7 +100,13 @@ export default function TrainingElitesPage() {
       <Navbar />
 
       <div className="w-screen">
-        <h1 className="text-4xl md:text-5xl lg:text-7xl text-white text-center mt-32">
+        <h1
+          className={clsx(
+            'text-4xl md:text-5xl lg:text-7xl text-white text-center',
+            { 'pt-72': isNavbarFixed },
+            { 'pt-48': !isNavbarFixed },
+          )}
+        >
           Super Coach Training Elites
         </h1>
         <img

@@ -14,16 +14,20 @@ const navigation = [
   { name: 'Tarifs', to: '#pricing' },
 ];
 
+const isBrowser = typeof window !== 'undefined';
+
 export default function Navbar() {
   const [isFixed, setIsFixed] = useState(false);
   const handleScroll = (value) => setIsFixed(value);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    if (window.scrollY === 0) {
-      handleScroll(false);
+    if (isBrowser) {
+      window.addEventListener('scroll', handleScroll);
+      if (window.scrollY === 0) {
+        handleScroll(false);
+      }
+      return () => window.removeEventListener('scroll', handleScroll);
     }
-    return () => window.removeEventListener('scroll', handleScroll);
   }, [window, handleScroll]);
   return (
     <Popover>

@@ -7,7 +7,7 @@ import Button from '../components/Button';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import HeroVideo from '../videos/hero-video.mp4';
+import HeroVideo from '../videos/hero-video-2.mp4';
 import Features from '../components/Features';
 import Pricing from '../components/pricing';
 import Navbar from '../components/navbar';

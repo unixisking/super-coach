@@ -95,15 +95,7 @@ export default function ContactPage() {
           <div className="mt-16">
             <div className="py-24">
               <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
-                <h1
-                  style={{
-                    background: 'linear-gradient(90deg,#ffa0ae 0%,#aacaef 75%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    borderColor: '#dcb6bd',
-                  }}
-                  className="text-4xl font-extrabold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-6xl w-full"
-                >
+                <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl w-full">
                   MOTIVATION
                   <br />
                   <span className="text-right">DETERMINATION</span>

@@ -75,12 +75,25 @@ export default function ContactPage() {
       address: ['Chemin Du Viaduc 12', '1008 Malley'],
     },
   ];
-  const onSubmit = (data) => {
-    if (workoutType === 'private') {
-      console.log({ ...data, workoutType, startDate, endDate, hello: 'hello' });
-    } else {
-      console.log({ ...data, workoutType, workout, hey: 'hey' });
-    }
+  const onSubmit = (formData) => {
+    // if (workoutType === 'private') {
+    //   console.log({ ...data, workoutType, startDate, endDate, hello: 'hello' });
+    // } else {
+    //   console.log({ ...data, workoutType, workout, hey: 'hey' });
+    // }s
+    const data = JSON.stringify({
+      ...formData,
+    });
+    fetch('/api/sendmail', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: data,
+    })
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   };
   return (
     <Layout>

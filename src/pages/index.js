@@ -247,11 +247,11 @@ function IndexPage() {
                 Training font brûler des calories, dans une ambiance
                 bienveillante et foncièrement positive.
               </p>
-              <button onClick={() => setIsVideoShown(true)}>
-                <a
-                  style={{ marginTop: '1.5rem' }}
-                  text="Regardez la vidéo de Steeve"
-                />
+              <button
+                className="mt-4 inline-flex items-center px-8 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-primary rounded-3xl"
+                onClick={() => setIsVideoShown(true)}
+              >
+                Regardez la vidéo de Steeve
               </button>
             </div>
           </div>

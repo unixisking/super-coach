@@ -32,8 +32,8 @@ export default function Navbar() {
   return (
     <Popover>
       <div
-        className={clsx('z-50 py-4 mx-auto px-4 sm:px-6', {
-          'fixed w-full bg-gradient-to-r from-primary to-red-500 top-0 lg:py-6 shadow-lg':
+        className={clsx('z-50 mx-auto px-4 sm:px-6', {
+          'fixed w-full bg-gradient-to-r from-primary to-red-500 top-0 lg:py-6 shadow-lg py-2':
             isFixed,
           'py-6': !isFixed,
         })}

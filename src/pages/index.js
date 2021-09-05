@@ -16,6 +16,46 @@ import StepsImage from '../images/steps.png';
 import StepsImageMobile from '../images/steps-mobile.png';
 import CoachVideo from '../videos/coach-video.mp4';
 import { Dialog, Transition } from '@headlessui/react';
+import MobilePrivateCourse from '../components/MobilePrivateCourses';
+
+const courses = [
+  {
+    title: 'FULL BODY WORKOUT',
+
+    text: 'Le FULL BODY WORKOUT est une session de 60 minutes, conçue pour raffermir la silhouette et brûler des calories. Chaque lundi à 18h45, le/la coach vous accompagne à chaque seconde, pour booster vos efforts ! Ouvert aux débutant·e·s et à tous les niveaux, le FULL BODY WORKOUT c’est un rendez-vous hebdomadaire, parfait pour tonifier le corps de la tête aux pieds.',
+    url: 'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png',
+  },
+  {
+    title: 'CARDIO STEP',
+
+    text: "Venez brûler un maximum de calories pendant notre cours CARDIO STEP. Accrochez-vous car chaque mardi à 19 heures, on fait fondre les kilos pendant 45minutes EXPLOSIVES! L'objectif ? Transpirer et se défouler... avec le sourire et du bon son.",
+    url: 'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png',
+  },
+  {
+    title: 'BOOTY SCULPT',
+
+    text: 'Qui n’a pas envie d’un fessier ferme et bien dessiné? Chaque jeudi à 19h45, venez sculpter le muscle le plus important du corps humain le grand fessier ! Le cours BOOTY SCULPT c’est 60 minutes hebdomadaires, parfaites pour combattre la cellulite et se sculpter une silhouette so bootylicious !',
+    url: 'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png',
+  },
+  {
+    title: 'BUSINESS WORKOUT',
+
+    text: 'Quelle est la plus grande qualité d’un entrepreneur? Une motivation en béton, au quotidien.Et pour bien démarrer sa journée d’entrepreneur, le BUSINESS WORKOUT vous invite à une séance de sport matinal. Après l’effort, un petit-déjeuner healty est servi chacun a 2 minutes chrono pour présenter son business ou ses services. De bon matin, connexions, réseautage et good vibes guaranties l’avenir appartient à ceux qui se lèvent avant tout lemonde !',
+    url: 'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630207646/super-coach/business_kk41ab.png',
+  },
+  {
+    title: 'SPEED DATING WORKOUT',
+
+    text: 'Envie d’une l’alternative aux applications de renco- ntres, truffées d’énergumènes ? N’en dites pas plus Nous avons ce qu’il vous faut: Le SPEED DATING WORKOUT, c’est une occasion unique de faire de nouvelles rencontres, dans une ambiance propice aux connexions naturelles. Loin des relations virtuelles, des conversations stériles et autres photos trompeuses, le SPEED DATING WORKOUT réunit les célibataires autour d’une activité fun, dans une ambiance détendue. Et qui sait ? Peut- être que la magie opérera.',
+    url: 'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466184/super-coach/speed_dating_c7g0um.png',
+  },
+  {
+    title: 'AFTER WORKOUT',
+
+    text: 'Fini les soirées impersonnelles à siroter des mojitos fadasses sur la terrasse ! Pour terminer sa journée sur une note originale et SUPER fun, l’AFTER WORKOUT vous invite à l’apéro detox, suivi d’un workout endiablé dans une ambiance de feu ! L’AFTER WORKOUT est un concept inédit en Suisse mais surtout, c’est définitivement une expérience à vivre entre amis ou collègues.',
+    url: 'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466180/super-coach/after_workout_xelhap.png',
+  },
+];
 
 const header = 'Coach Sportif ';
 const highlighted = 'Lausanne';
@@ -342,163 +382,163 @@ function IndexPage() {
               Cours collectifs
             </h2>
           </div>
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center">
-            <div
-              className="mt-10 -mx-4 relative lg:mt-0 col-start-2 sm:col-start-1 hidden sm:block"
-              aria-hidden="true"
-            >
-              <img
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"
-                alt=""
-              />
+          <div className="hidden md:block">
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center">
+              <div
+                className="mt-10 -mx-4 relative lg:mt-0 col-start-2 sm:col-start-1"
+                aria-hidden="true"
+              >
+                <img
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"
+                  alt=""
+                />
+              </div>
+              <div className="relative col-start-1 lg:col-start-2">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
+                  FULL BODY WORKOUT
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Le FULL BODY WORKOUT est une session de 60 minutes, conçue
+                  pour raffermir la silhouette et brûler des calories. Chaque
+                  lundi à 18h45, le/la coach vous accompagne à chaque seconde,
+                  pour booster vos efforts ! Ouvert aux débutant·e·s et à tous
+                  les niveaux, le FULL BODY WORKOUT c’est un rendez-vous
+                  hebdomadaire, parfait pour tonifier le corps de la tête aux
+                  pieds.
+                </p>
+              </div>
             </div>
-            <div className="relative col-start-1 lg:col-start-2">
-              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
-                FULL BODY WORKOUT
-              </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Le FULL BODY WORKOUT est une session de 60 minutes, conçue pour
-                raffermir la silhouette et brûler des calories. Chaque lundi à
-                18h45, le/la coach vous accompagne à chaque seconde, pour
-                booster vos efforts ! Ouvert aux débutant·e·s et à tous les
-                niveaux, le FULL BODY WORKOUT c’est un rendez-vous hebdomadaire,
-                parfait pour tonifier le corps de la tête aux pieds.
-              </p>
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                  CARDIO STEP
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Venez brûler un maximum de calories pendant notre cours CARDIO
+                  STEP. Accrochez-vous car chaque mardi à 19 heures, on fait
+                  fondre les kilos pendant 45minutes EXPLOSIVES! L&apos;objectif
+                  ? Transpirer et se défouler... avec le sourire et du bon son.
+                </p>
+              </div>
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <img
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png"
+                  alt=""
+                />
+              </div>
             </div>
-          </div>
 
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
-            <div className="relative">
-              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
-                CARDIO STEP
-              </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Venez brûler un maximum de calories pendant notre cours CARDIO
-                STEP. Accrochez-vous car chaque mardi à 19 heures, on fait
-                fondre les kilos pendant 45minutes EXPLOSIVES! L&apos;objectif ?
-                Transpirer et se défouler... avec le sourire et du bon son.
-              </p>
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <img
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png"
+                  alt=""
+                />
+              </div>
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                  BOOTY SCULPT
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Qui n’a pas envie d’un fessier ferme et bien dessiné? Chaque
+                  jeudi à 19h45, venez sculpter le muscle le plus important du
+                  corps humain le grand fessier ! Le cours BOOTY SCULPT c’est 60
+                  minutes hebdomadaires, parfaites pour combattre la cellulite
+                  et se sculpter une silhouette so bootylicious !
+                </p>
+              </div>
             </div>
-            <div
-              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
-              aria-hidden="true"
-            >
-              <img
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png"
-                alt=""
-              />
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                  BUSINESS WORKOUT
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Quelle est la plus grande qualité d’un entrepreneur? Une
+                  motivation en béton, au quotidien.Et pour bien démarrer sa
+                  journée d’entrepreneur, le BUSINESS WORKOUT vous invite à une
+                  séance de sport matinal. Après l’effort, un petit-déjeuner
+                  healty est servi chacun a 2 minutes chrono pour présenter son
+                  business ou ses services. De bon matin, connexions, réseautage
+                  et good vibes guaranties l’avenir appartient à ceux qui se
+                  lèvent avant tout lemonde !
+                </p>
+              </div>
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <img
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630207646/super-coach/business_kk41ab.png"
+                  alt=""
+                />
+              </div>
             </div>
-          </div>
-
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div
-              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
-              aria-hidden="true"
-            >
-              <img
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png"
-                alt=""
-              />
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <img
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466184/super-coach/speed_dating_c7g0um.png"
+                  alt=""
+                />
+              </div>
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                  SPEED DATING WORKOUT
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Envie d’une l’alternative aux applications de renco- ntres,
+                  truffées d’énergumènes ? N’en dites pas plus Nous avons ce
+                  qu’il vous faut: Le SPEED DATING WORKOUT, c’est une occasion
+                  unique de faire de nouvelles rencontres, dans une ambiance
+                  propice aux connexions naturelles. Loin des relations
+                  virtuelles, des conversations stériles et autres photos
+                  trompeuses, le SPEED DATING WORKOUT réunit les célibataires
+                  autour d’une activité fun, dans une ambiance détendue. Et qui
+                  sait ? Peut- être que la magie opérera
+                </p>
+              </div>
             </div>
-            <div className="relative">
-              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
-                BOOTY SCULPT
-              </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Qui n’a pas envie d’un fessier ferme et bien dessiné? Chaque
-                jeudi à 19h45, venez sculpter le muscle le plus important du
-                corps humain le grand fessier ! Le cours BOOTY SCULPT c’est 60
-                minutes hebdomadaires, parfaites pour combattre la cellulite et
-                se sculpter une silhouette so bootylicious !
-              </p>
-            </div>
-          </div>
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative">
-              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
-                BUSINESS WORKOUT
-              </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Quelle est la plus grande qualité d’un entrepreneur? Une
-                motivation en béton, au quotidien.Et pour bien démarrer sa
-                journée d’entrepreneur, le BUSINESS WORKOUT vous invite à une
-                séance de sport matinal. Après l’effort, un petit-déjeuner
-                healty est servi chacun a 2 minutes chrono pour présenter son
-                business ou ses services. De bon matin, connexions, réseautage
-                et good vibes guaranties l’avenir appartient à ceux qui se
-                lèvent avant tout lemonde !
-              </p>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-              <img
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630207646/super-coach/business_kk41ab.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div
-              className="mt-10 -mx-4 relative lg:mt-0 hidden sm:block"
-              aria-hidden="true"
-            >
-              <img
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466184/super-coach/speed_dating_c7g0um.png"
-                alt=""
-              />
-            </div>
-            <div className="relative">
-              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
-                SPEED DATING WORKOUT
-              </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Envie d’une l’alternative aux applications de renco- ntres,
-                truffées d’énergumènes ? N’en dites pas plus Nous avons ce qu’il
-                vous faut: Le SPEED DATING WORKOUT, c’est une occasion unique de
-                faire de nouvelles rencontres, dans une ambiance propice aux
-                connexions naturelles. Loin des relations virtuelles, des
-                conversations stériles et autres photos trompeuses, le SPEED
-                DATING WORKOUT réunit les célibataires autour d’une activité
-                fun, dans une ambiance détendue. Et qui sait ? Peut- être que la
-                magie opérera
-              </p>
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center pb-16">
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
+                  AFTER WORKOUT
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Fini les soirées impersonnelles à siroter des mojitos fadasses
+                  sur la terrasse ! Pour terminer sa journée sur une note
+                  originale et SUPER fun, l’AFTER WORKOUT vous invite à l’apéro
+                  detox, suivi d’un workout endiablé dans une ambiance de feu !
+                  L’AFTER WORKOUT est un concept inédit en Suisse mais surtout,
+                  c’est définitivement une expérience à vivre entre amis ou
+                  collègues.
+                </p>
+              </div>
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <img
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466180/super-coach/after_workout_xelhap.png"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center pb-16">
-            <div className="relative">
-              <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl">
-                AFTER WORKOUT
-              </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Fini les soirées impersonnelles à siroter des mojitos fadasses
-                sur la terrasse ! Pour terminer sa journée sur une note
-                originale et SUPER fun, l’AFTER WORKOUT vous invite à l’apéro
-                detox, suivi d’un workout endiablé dans une ambiance de feu !
-                L’AFTER WORKOUT est un concept inédit en Suisse mais surtout,
-                c’est définitivement une expérience à vivre entre amis ou
-                collègues.
-              </p>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-              <img
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466180/super-coach/after_workout_xelhap.png"
-                alt=""
+          <div className="block md:hidden">
+            {courses.map((course) => (
+              <MobilePrivateCourse
+                key={course.title}
+                title={course.title}
+                text={course.text}
+                url={course.url}
               />
-            </div>
+            ))}
           </div>
         </div>
       </div>

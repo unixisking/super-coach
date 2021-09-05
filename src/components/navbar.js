@@ -43,7 +43,7 @@ export default function Navbar() {
         >
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-full md:w-auto">
-              <Link href="/">
+              <Link to="/">
                 <img
                   className="w-auto h-24"
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630507519/super-coach/logo-mobile_rq0gxy.png"
@@ -73,7 +73,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
             <span className="inline-flex">
-              <Button to="/contact" text="Contact" />
+              <Button internal to="/contact" text="Contact" />
             </span>
           </div>
         </nav>
@@ -120,7 +120,7 @@ export default function Navbar() {
               ))}
             </div>
             <div className="flex justify-center">
-              <Button to="/contact" text="Contact" />
+              <Button internal to="/contact" text="Contact" />
             </div>
           </div>
         </Popover.Panel>

@@ -71,7 +71,6 @@ const features = [
 function IndexPage() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
-  const [secondSectionRef, isInView] = useInView();
   const [isVideoShown, setIsVideoShown] = useState(false);
 
   useEffect(() => {
@@ -82,7 +81,6 @@ function IndexPage() {
     }
     animate();
   }, [controls, inView]);
-  console.log(isInView);
   return (
     <Layout>
       <SEO
@@ -101,6 +99,7 @@ function IndexPage() {
         <source src={HeroVideo} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
+      <div className="pt-48" />
       <CtaSection
         className="static lg:absolute"
         transition={{ delay: 1, from: { y: -10000 }, to: { y: 0 } }}
@@ -137,6 +136,7 @@ function IndexPage() {
           <span className="text-primary">gratuite</span> maintenant.
         </p>
         <Button
+          internal
           to="/contact"
           style={{ marginTop: '1.5rem' }}
           text="Je réserve une séance d'essai"
@@ -144,7 +144,7 @@ function IndexPage() {
       </CtaSection>
 
       <div className="pt-16 bg-black lg:pt-24">
-        <Features ref={secondSectionRef} />
+        <Features />
       </div>
 
       <Transition appear show={isVideoShown} as={Fragment}>
@@ -249,7 +249,7 @@ function IndexPage() {
                 bienveillante et foncièrement positive.
               </p>
               <button onClick={() => setIsVideoShown(true)}>
-                <Button
+                <a
                   style={{ marginTop: '1.5rem' }}
                   text="Regardez la vidéo de Steeve"
                 />

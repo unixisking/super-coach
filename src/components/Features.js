@@ -23,12 +23,9 @@ const features = [
 ];
 
 // eslint-disable-next-line react/prop-types
-export default function Features({ ref }) {
+export default function Features() {
   return (
-    <div
-      ref={ref}
-      className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl z-20"
-    >
+    <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl z-20">
       <div className="relative" style={{ width: 550 }}>
         <h2
           className="text-left text-3xl text-primary leading-8 font-medium tracking-tight pb-4"

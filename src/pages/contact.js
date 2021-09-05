@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { RadioGroup } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import setMinutes from 'date-fns/setMinutes';
+import { SpinnerCircular } from 'spinners-react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -21,11 +22,11 @@ import { addMinutes } from 'date-fns';
 const choices = [
   {
     name: 'Cours collectifs',
-    value: 'public',
+    value: 'Cours collectifs',
   },
   {
     name: 'Cours privés',
-    value: 'private',
+    value: 'Cours privés',
   },
 ];
 
@@ -49,22 +50,23 @@ function classNames(...classes) {
 }
 
 const schema = Yup.object({
-  name: Yup.string()
-    .max(15, 'Must be 15 characters or less')
-    .required('Required'),
-  email: Yup.string().email('Invalid email address').required('Required'),
-  phone: Yup.string().required(),
+  name: Yup.string().required('Ce champ est obligatoire'),
+  email: Yup.string()
+    .email('Adresse e-mail invalide')
+    .required('Ce champ est obligatoire'),
+  phone: Yup.string().required('Ce champ est obligatoire'),
 });
 
 export default function ContactPage() {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const [workoutType, setWorkoutType] = useState('public');
+  const [loading, setLoading] = useState(false);
+  const [workoutType, setWorkoutType] = useState('Cours collectifs');
   const [workout, setWorkout] = useState('Full Body');
   const [startDate, setStartDate] = useState(setMinutes(new Date(), 0));
   const [endDate, setEndDate] = useState(setMinutes(new Date(), 30));
@@ -76,24 +78,53 @@ export default function ContactPage() {
     },
   ];
   const onSubmit = (formData) => {
-    // if (workoutType === 'private') {
-    //   console.log({ ...data, workoutType, startDate, endDate, hello: 'hello' });
-    // } else {
-    //   console.log({ ...data, workoutType, workout, hey: 'hey' });
-    // }s
-    const data = JSON.stringify({
-      ...formData,
-    });
-    fetch('/api/sendmail', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: data,
-    })
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+    setLoading(true);
+    if (workoutType === 'Cours privés') {
+      const data = JSON.stringify({
+        ...formData,
+        startDate,
+        endDate,
+        workoutType,
+      });
+      fetch('/api/sendmail', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: data,
+      })
+        .then((response) => {
+          console.log(response);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          setLoading(false);
+        });
+    } else {
+      const data = JSON.stringify({
+        ...formData,
+        workoutType,
+        workout,
+      });
+      fetch('/api/sendmail', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: data,
+      })
+        .then((response) => {
+          console.log(response);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          setLoading(false);
+        });
+    }
   };
   return (
     <Layout>
@@ -313,6 +344,7 @@ export default function ContactPage() {
                       Inscrivez-vous et bénéficiez d&apos;une session gratuite
                     </h3>
                     <form
+                      method="POST"
                       onSubmit={handleSubmit(onSubmit)}
                       className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                     >
@@ -326,15 +358,18 @@ export default function ContactPage() {
                         <div className="mt-1">
                           <input
                             type="text"
-                            name="firstName"
-                            {...register('firstName', { required: true })}
+                            name="name"
+                            {...register('name', { required: true })}
                             id="first-name"
                             autoComplete="given-name"
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-primary focus:border-primary border-warm-gray-300 rounded-md"
                           />
                         </div>
+                        <span className="mt-2 text-sm text-red-500">
+                          {errors?.name?.message}
+                        </span>
                       </div>
-                      <div>
+                      <div className="mr-4 lg:mr-0">
                         <label
                           htmlFor="email"
                           className="block text-sm font-medium text-warm-gray-900"
@@ -350,6 +385,9 @@ export default function ContactPage() {
                             className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-primary focus:border-primary border-warm-gray-300 rounded-md"
                           />
                         </div>
+                        <span className="mt-2 text-sm text-red-500">
+                          {errors?.email?.message}
+                        </span>
                       </div>
                       <div>
                         <div className="flex justify-between">
@@ -369,6 +407,9 @@ export default function ContactPage() {
                             aria-describedby="phone-optional"
                           />
                         </div>
+                        <span className="mt-2 text-sm text-red-500">
+                          {errors?.phone?.message}
+                        </span>
                       </div>
                       <div className="col-span-2">
                         <label htmlFor="first-name" className=""></label>
@@ -449,7 +490,7 @@ export default function ContactPage() {
                           </div>
                         </RadioGroup>
                       </div>
-                      {workoutType === 'public' ? (
+                      {workoutType === 'Cours collectifs' ? (
                         <div className="col-span-2">
                           <RadioGroup
                             value={workout}
@@ -621,14 +662,25 @@ export default function ContactPage() {
                         </div>
                       </div> */}
                       <div className="sm:col-span-2 sm:flex sm:justify-end">
-                        <motion.button
+                        {/* <motion.input
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           type="submit"
                           className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary rounded-3xl focus:outline-none sm:w-auto"
                         >
                           Envoyer
-                        </motion.button>
+                        </motion.input> */}
+                        <input
+                          type="submit"
+                          name="submit"
+                          value="Envoyer"
+                          className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary rounded-3xl focus:outline-none sm:w-auto"
+                        />
+                        <SpinnerCircular
+                          enabled={loading}
+                          style={{ color: '#fff', marginLeft: '5px' }}
+                          size={25}
+                        />
                       </div>
                     </form>
                   </div>
@@ -669,30 +721,3 @@ export default function ContactPage() {
     </Layout>
   );
 }
-
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-  
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          'warm-gray': colors.warmGray,
-          teal: colors.teal,
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/

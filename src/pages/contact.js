@@ -381,14 +381,14 @@ export default function ContactPage() {
                           {errors?.name?.message}
                         </span>
                       </div>
-                      <div className="mr-4 lg:mr-0">
+                      <div className="col-span-2 lg:col-span-1 lg:mr-4 lg:mr-0">
                         <label
                           htmlFor="email"
                           className="block text-sm font-medium text-warm-gray-900"
                         >
                           Adresse e-mail
                         </label>
-                        <div className="mt-1">
+                        <div className="col-span-2 md:col-span-1 mt-1">
                           <input
                             id="email"
                             {...register('email', { required: true })}

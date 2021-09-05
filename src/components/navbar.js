@@ -8,10 +8,10 @@ import clsx from 'clsx';
 
 const navigation = [
   { name: 'Coach Lausanne', to: '/' },
-  { name: 'Histoires de Succès', to: '#testimonials' },
-  { name: 'Cours collectifs', to: '#courses' },
-  { name: 'Cours privés', to: '#courses' },
-  { name: 'Tarifs', to: '#pricing' },
+  { name: 'Histoires de Succès', to: '/#testimonials' },
+  { name: 'Cours collectifs', to: '/#courses' },
+  { name: 'Cours privés', to: '/#courses' },
+  { name: 'Tarifs', to: '/#pricing' },
 ];
 
 const isBrowser = typeof window !== 'undefined';

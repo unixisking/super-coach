@@ -32,15 +32,27 @@ const choices = [
 
 const publicWorkouts = [
   {
-    name: 'Full Body',
+    name: 'FULL BODY',
     url: '',
   },
   {
-    name: 'Cardio Step',
+    name: 'CARDIO STEP',
     url: '',
   },
   {
-    name: 'Booty Scuplt',
+    name: 'BOOTY SCUPLT',
+    url: '',
+  },
+  {
+    name: 'BUSINESS WORKOUT',
+    url: '',
+  },
+  {
+    name: 'SPEED DATING WORKOUT',
+    url: '',
+  },
+  {
+    name: 'AFTER WORKOUT',
     url: '',
   },
 ];
@@ -353,7 +365,7 @@ export default function ContactPage() {
                           htmlFor="name"
                           className="block text-sm font-medium text-warm-gray-900"
                         >
-                          Nom
+                          Nom complet
                         </label>
                         <div className="mt-1">
                           <input

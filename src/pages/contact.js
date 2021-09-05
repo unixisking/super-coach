@@ -388,7 +388,7 @@ export default function ContactPage() {
                         >
                           Adresse e-mail
                         </label>
-                        <div className="col-span-2 md:col-span-1 mt-1">
+                        <div className="col-span-2 lg:col-span-1 mt-1">
                           <input
                             id="email"
                             {...register('email', { required: true })}
@@ -401,7 +401,7 @@ export default function ContactPage() {
                           {errors?.email?.message}
                         </span>
                       </div>
-                      <div>
+                      <div className="col-span-2 lg:col-span-1">
                         <div className="flex justify-between">
                           <label
                             htmlFor="phone"
@@ -581,7 +581,11 @@ export default function ContactPage() {
                         </div>
                       ) : (
                         <>
-                          <div className="relative z-20">
+                          <div
+                            style={{ zIndex: 100 }}
+                            className="
+                          relative col-span-2 lg:col-span-1"
+                          >
                             <div className="flex justify-between">
                               <label
                                 htmlFor="date"
@@ -593,7 +597,7 @@ export default function ContactPage() {
                             <DatePicker
                               showTimeSelect
                               dateFormat="MMMM d, yyyy h:mm aa"
-                              className="mt-4 border-primary z-30 w-full"
+                              className="mt-4 border-primary w-full"
                               id="date"
                               value={startDate}
                               selected={startDate}
@@ -605,7 +609,7 @@ export default function ContactPage() {
                               // maxDate={addDays(new Date(), 90)}
                             />
                           </div>
-                          <div className="relative z-20">
+                          <div className="relative col-span-2 lg:col-span-1">
                             <div className="flex justify-between">
                               <label
                                 htmlFor="date"
@@ -617,7 +621,7 @@ export default function ContactPage() {
                             <DatePicker
                               showTimeSelect
                               dateFormat="MMMM d, yyyy h:mm aa"
-                              className="mt-4 border-primary z-30 w-full"
+                              className="mt-4 border-primary w-full"
                               id="date"
                               value={endDate}
                               selected={addMinutes(startDate, 30)}

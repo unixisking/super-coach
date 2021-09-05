@@ -68,6 +68,7 @@ module.exports = {
       options: {
         printRejected: true, // Print removed selectors and processed file names
         tailwind: true,
+        ignore: ['react-datepicker/dist/react-datepicker.css'],
         // develop: true, // Enable while using `gatsby develop`
         // tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'],

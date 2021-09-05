@@ -73,7 +73,12 @@ export default function Navbar() {
           </div>
           <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
             <span className="inline-flex">
-              <Button internal to="/contact" text="Contact" />
+              <Link
+                className="inline-flex items-center px-8 py-2 border border-transparent text-base font-medium rounded-lg text-primary bg-white rounded-3xl"
+                to="/contact"
+              >
+                Contact
+              </Link>
             </span>
           </div>
         </nav>

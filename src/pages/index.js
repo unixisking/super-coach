@@ -99,7 +99,6 @@ function IndexPage() {
         <source src={HeroVideo} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
-      <div className="pt-48" />
       <CtaSection
         className="static lg:absolute"
         transition={{ delay: 1, from: { y: -10000 }, to: { y: 0 } }}

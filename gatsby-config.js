@@ -5,9 +5,10 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`,
+    title: `Super Coach`,
+    description: `Fitness Website`,
+    siteUrl: 'https://super-coach.ch',
+    author: `@try2promote`,
   },
   plugins: [
     `gatsby-plugin-eslint`,

@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Button from './Button';
+import LogoImage from '../images/logo.svg';
 import clsx from 'clsx';
 
 const navigation = [
@@ -31,7 +32,7 @@ export default function Navbar() {
   return (
     <Popover>
       <div
-        className={clsx('z-50 mx-auto px-4 sm:px-6', {
+        className={clsx('z-50 py-4 mx-auto px-4 sm:px-6', {
           'fixed w-full bg-gradient-to-r from-primary to-red-500 top-0 lg:py-6 shadow-lg':
             isFixed,
           'py-6': !isFixed,
@@ -44,11 +45,7 @@ export default function Navbar() {
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link to="/">
-                <img
-                  className="w-auto h-24"
-                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630507519/super-coach/logo-mobile_rq0gxy.png"
-                  alt=""
-                />
+                <img className="w-auto h-12" src={LogoImage} alt="" />
               </Link>
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -100,11 +97,7 @@ export default function Navbar() {
           <div className="rounded-lg shadow-md bg-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden p-4">
             <div className="pt-4 flex items-center justify-between">
               <div>
-                <img
-                  className="h-20 w-20"
-                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630507519/super-coach/logo-mobile_rq0gxy.png"
-                  alt=""
-                />
+                <img className="h-12 w-auto ml-2" src={LogoImage} alt="" />
               </div>
               <div className="-mr-2">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

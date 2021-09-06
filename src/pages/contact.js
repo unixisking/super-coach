@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
-// import { motion } from 'framer-motion';
 import { RadioGroup } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-// import setMinutes from 'date-fns/setMinutes';
 import { SpinnerCircular } from 'spinners-react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
-// import DatePicker from 'react-datepicker';
 
-import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '../components/navbar';
 import WORK_HOURS from '../constants/work_hours';
 import TimeSelect from '../components/TimeSelect';
-
-// import WORK_HOURS from '../constants/work_hours';
-// import { addMinutes } from 'date-fns';
 
 const choices = [
   {
@@ -84,10 +77,6 @@ export default function ContactPage() {
   const [workout, setWorkout] = useState('Full Body');
   const [startDate, setStartDate] = useState(new Date());
   const [selectedWorkHour, setSelectedWorkHour] = useState(WORK_HOURS[0]);
-  // new Date().toISOString().split('T')[0],
-  console.log(setStartDate);
-  console.log(selectedWorkHour);
-  // const [endDate, setEndDate] = useState(setMinutes(new Date(), 30));
   const offices = [
     {
       id: 1,
@@ -164,11 +153,6 @@ export default function ContactPage() {
                   <span className="text-right">DETERMINATION</span>
                   <br /> SOURIRE
                 </h1>
-                {/* <p className="mt-6 text-xl text-gray-400 max-w-3xl">
-                  Vel nunc non ut montes, viverra tempor. Proin lectus nibh
-                  phasellus morbi non morbi. In elementum urna ut volutpat.
-                  Sagittis et vel et fermentum amet consequat.
-                </p> */}
               </div>
             </div>
           </div>
@@ -491,16 +475,6 @@ export default function ContactPage() {
                                       >
                                         {setting.name}
                                       </RadioGroup.Label>
-                                      {/* <RadioGroup.Description
-                                        as="span"
-                                        className={classNames(
-                                          checked
-                                            ? 'text-primary'
-                                            : 'text-gray-500',
-                                          'block text-sm',
-                                        )}
-                                      >
-                                      </RadioGroup.Description> */}
                                     </div>
                                   </>
                                 )}
@@ -588,11 +562,7 @@ export default function ContactPage() {
                         </div>
                       ) : (
                         <>
-                          <div
-                            style={{ zIndex: 100 }}
-                            className="
-                          relative col-span-2 lg:col-span-1"
-                          >
+                          <div className="relative col-span-2 lg:col-span-1">
                             <div className="flex justify-between">
                               <label
                                 htmlFor="date"
@@ -609,20 +579,6 @@ export default function ContactPage() {
                                 setStartDate(new Date(e.target.value))
                               }
                             />
-                            {/* <DatePicker
-                              showTimeSelect
-                              dateFormat="MMMM d, yyyy h:mm aa"
-                              className="mt-4 border-primary w-full"
-                              id="date"
-                              value={startDate}
-                              selected={startDate}
-                              onChange={(date) => setStartDate(date)}
-                              includeTimes={WORK_HOURS.slice(0, -1)}
-                              // minDate={new Date()}
-                              // minTime={new Date().getTime()}
-                              // maxTime={addDays(new Date(), 1)}
-                              // maxDate={addDays(new Date(), 90)}
-                            /> */}
                           </div>
                           <div className="relative col-span-2 lg:col-span-1">
                             <TimeSelect
@@ -633,57 +589,7 @@ export default function ContactPage() {
                         </>
                       )}
 
-                      {/* <div className="sm:col-span-2">
-                        <label
-                          htmlFor="subject"
-                          className="block text-sm font-medium text-warm-gray-900"
-                        >
-                          Subject
-                        </label>
-                        <div className="mt-1">
-                          <input
-                            type="text"
-                            name="subject"
-                            id="subject"
-                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border-warm-gray-300 rounded-md"
-                          />
-                        </div>
-                      </div> */}
-                      {/* <div className="sm:col-span-2">
-                        <div className="flex justify-between">
-                          <label
-                            htmlFor="message"
-                            className="block text-sm font-medium text-warm-gray-900"
-                          >
-                            Message
-                          </label>
-                          <span
-                            id="message-max"
-                            className="text-sm text-warm-gray-500"
-                          >
-                            Max. 500 characters
-                          </span>
-                        </div>
-                        <div className="mt-1">
-                          <textarea
-                            id="message"
-                            name="message"
-                            rows={4}
-                            className="py-3 px-4 block w-full shadow-sm text-warm-gray-900 focus:ring-teal-500 focus:border-teal-500 border border-warm-gray-300 rounded-md"
-                            aria-describedby="message-max"
-                            defaultValue={''}
-                          />
-                        </div>
-                      </div> */}
                       <div className="sm:col-span-2 sm:flex sm:justify-end">
-                        {/* <motion.input
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          type="submit"
-                          className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary rounded-3xl focus:outline-none sm:w-auto"
-                        >
-                          Envoyer
-                        </motion.input> */}
                         <input
                           type="submit"
                           name="submit"

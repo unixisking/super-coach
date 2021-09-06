@@ -4,20 +4,22 @@ import { RadioGroup } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import setMinutes from 'date-fns/setMinutes';
+// import setMinutes from 'date-fns/setMinutes';
 import { SpinnerCircular } from 'spinners-react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '../components/navbar';
-
 import WORK_HOURS from '../constants/work_hours';
-import { addMinutes } from 'date-fns';
+import TimeSelect from '../components/TimeSelect';
+
+// import WORK_HOURS from '../constants/work_hours';
+// import { addMinutes } from 'date-fns';
 
 const choices = [
   {
@@ -80,8 +82,12 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [workoutType, setWorkoutType] = useState('Cours collectifs');
   const [workout, setWorkout] = useState('Full Body');
-  const [startDate, setStartDate] = useState(setMinutes(new Date(), 0));
-  const [endDate, setEndDate] = useState(setMinutes(new Date(), 30));
+  const [startDate, setStartDate] = useState(new Date());
+  const [selectedWorkHour, setSelectedWorkHour] = useState(WORK_HOURS[0]);
+  // new Date().toISOString().split('T')[0],
+  console.log(setStartDate);
+  console.log(selectedWorkHour);
+  // const [endDate, setEndDate] = useState(setMinutes(new Date(), 30));
   const offices = [
     {
       id: 1,
@@ -94,9 +100,9 @@ export default function ContactPage() {
     if (workoutType === 'Cours privés') {
       const data = JSON.stringify({
         ...formData,
-        startDate,
-        endDate,
         workoutType,
+        startDate: startDate.toISOString().split('T')[0],
+        selectedWorkHour: selectedWorkHour.name,
       });
       fetch('/api/sendmail', {
         method: 'POST',
@@ -595,7 +601,15 @@ export default function ContactPage() {
                                 Début de séance
                               </label>
                             </div>
-                            <DatePicker
+                            <input
+                              className="mt-2"
+                              type="date"
+                              value={startDate.toISOString().split('T')[0]}
+                              onChange={(e) =>
+                                setStartDate(new Date(e.target.value))
+                              }
+                            />
+                            {/* <DatePicker
                               showTimeSelect
                               dateFormat="MMMM d, yyyy h:mm aa"
                               className="mt-4 border-primary w-full"
@@ -608,29 +622,12 @@ export default function ContactPage() {
                               // minTime={new Date().getTime()}
                               // maxTime={addDays(new Date(), 1)}
                               // maxDate={addDays(new Date(), 90)}
-                            />
+                            /> */}
                           </div>
                           <div className="relative col-span-2 lg:col-span-1">
-                            <div className="flex justify-between">
-                              <label
-                                htmlFor="date"
-                                className="block text-sm font-medium text-warm-gray-900"
-                              >
-                                Fin de séance
-                              </label>
-                            </div>
-                            <DatePicker
-                              showTimeSelect
-                              dateFormat="MMMM d, yyyy h:mm aa"
-                              className="mt-4 border-primary w-full"
-                              id="date"
-                              value={endDate}
-                              selected={addMinutes(startDate, 30)}
-                              onChange={(date) => setEndDate(date)}
-                              disabled
-                              // minDate={new Date()}
-                              // maxDate={addDays(new Date(), 90)}
-                              includeTimes={WORK_HOURS}
+                            <TimeSelect
+                              selected={selectedWorkHour}
+                              setSelected={setSelectedWorkHour}
                             />
                           </div>
                         </>

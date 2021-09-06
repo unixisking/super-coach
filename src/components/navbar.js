@@ -9,8 +9,8 @@ import clsx from 'clsx';
 const navigation = [
   { name: 'Coach Lausanne', to: '/' },
   { name: 'Histoires de Succès', to: '/#testimonials' },
-  { name: 'Cours collectifs', to: '/#courses' },
-  { name: 'Cours privés', to: '/#courses' },
+  { name: 'Cours collectifs', to: '/#courses-collectifs' },
+  { name: 'Cours privés', to: '/#courses-privés' },
   { name: 'Tarifs', to: '/#pricing' },
 ];
 

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import Button from '../components/Button';
@@ -74,7 +74,6 @@ const features = [
 ];
 
 function IndexPage() {
-  const controls = useAnimation();
   const [isVideoShown, setIsVideoShown] = useState(false);
 
   return (
@@ -218,81 +217,130 @@ function IndexPage() {
               Nos Coachs
             </h2>
           </div>
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-              <StaticImage
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630508058/super-coach/DSC01308_vxm2al.jpg"
-                alt=""
-              />
+
+          <div className="hidden lg:block">
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <StaticImage
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630508058/super-coach/DSC01308_vxm2al.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
+                  Steeve Louissaint
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  C’est le coach préféré des Romand·e·s ! Au terme de sa
+                  carrière de basketteur (élite suisse, lions de Genève) Steeve
+                  Louissaint a décidé de mettre son expérience et ses diplômes
+                  (anatomie) à profit, en tant que coach de sport. Ses
+                  programmes de coaching personnalisés ont notamment bénéficié à
+                  Thabo Sefolosha (NBA), Sarah Atcho (sprinteuse, record suisse)
+                  ou encore Johan Djourou (élite football suisse). La devise du
+                  coach? “Motivation, détermination et sourire” !Voilà pourquoi
+                  les cours Louissaint Training font brûler des calories, dans
+                  une ambiance bienveillante et foncièrement positive.
+                </p>
+                <button
+                  className="mt-4 inline-flex items-center px-8 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-primary rounded-3xl"
+                  onClick={() => setIsVideoShown(true)}
+                >
+                  Regardez la vidéo de Steeve
+                </button>
+              </div>
             </div>
-            <div className="relative">
+
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="relative">
+                <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl ">
+                  Rebecca Louissaint
+                </h3>
+                <p className="mt-3 text-lg text-gray-400">
+                  Derrière chaque coach accompli, il y a...une femme qui l’est
+                  tout autant! Rebecca Louissaint est une passionnée de sport et
+                  de nutrition. Portée sur les mesures concrètes qui favorisent
+                  le bien-être, cette mère et femme de feu trouve son équilibre
+                  grâce au sport. Avec son style à la fois doux et super
+                  tonique, Coach Rebecca Louissaint a donné naissance au concept
+                  Gym Poussette après la venue de son premier enfant. À la salle
+                  comme à la ville, sa devise reste la même: “un esprit sain
+                  dans un corps sain”.
+                </p>
+              </div>
+              <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+                <StaticImage
+                  placeholder="blurred"
+                  className="relative mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894528/super-coach/WhatsApp_Image_2021-08-23_at_13.29.47_nkbudo.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div className="block lg:hidden">
+            <div className="relative mt-12 lg:mt-24 ">
               <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
                 Steeve Louissaint
               </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                C’est le coach préféré des Romand·e·s ! Au terme de sa carrière
-                de basketteur (élite suisse, lions de Genève) Steeve Louissaint
-                a décidé de mettre son expérience et ses diplômes (anatomie) à
-                profit, en tant que coach de sport. Ses programmes de coaching
-                personnalisés ont notamment bénéficié à Thabo Sefolosha (NBA),
-                Sarah Atcho (sprinteuse, record suisse) ou encore Johan Djourou
-                (élite football suisse). La devise du coach? “Motivation,
-                détermination et sourire” !Voilà pourquoi les cours Louissaint
-                Training font brûler des calories, dans une ambiance
-                bienveillante et foncièrement positive.
-              </p>
-              <button
-                className="mt-4 inline-flex items-center px-8 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-primary rounded-3xl"
-                onClick={() => setIsVideoShown(true)}
-              >
-                Regardez la vidéo de Steeve
-              </button>
+              <div className="relative" aria-hidden="true">
+                <StaticImage
+                  className="relative mt-4 mx-auto rounded-lg"
+                  width={490}
+                  src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630508058/super-coach/DSC01308_vxm2al.jpg"
+                  alt="Steeve Louissaint"
+                />
+              </div>
+              <div className="relative">
+                <p className="mt-3 text-lg text-gray-400">
+                  C’est le coach préféré des Romand·e·s ! Au terme de sa
+                  carrière de basketteur (élite suisse, lions de Genève) Steeve
+                  Louissaint a décidé de mettre son expérience et ses diplômes
+                  (anatomie) à profit, en tant que coach de sport. Ses
+                  programmes de coaching personnalisés ont notamment bénéficié à
+                  Thabo Sefolosha (NBA), Sarah Atcho (sprinteuse, record suisse)
+                  ou encore Johan Djourou (élite football suisse). La devise du
+                  coach? “Motivation, détermination et sourire” !Voilà pourquoi
+                  les cours Louissaint Training font brûler des calories, dans
+                  une ambiance bienveillante et foncièrement positive.
+                </p>
+                <button
+                  className="mt-4 inline-flex items-center px-8 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-primary rounded-3xl"
+                  onClick={() => setIsVideoShown(true)}
+                >
+                  Regardez la vidéo de Steeve
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative">
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl ">
                 Rebecca Louissaint
               </h3>
-              <p className="mt-3 text-lg text-gray-400">
-                Derrière chaque coach accompli, il y a...une femme qui l’est
-                tout autant! Rebecca Louissaint est une passionnée de sport et
-                de nutrition. Portée sur les mesures concrètes qui favorisent le
-                bien-être, cette mère et femme de feu trouve son équilibre grâce
-                au sport. Avec son style à la fois doux et super tonique, Coach
-                Rebecca Louissaint a donné naissance au concept Gym Poussette
-                après la venue de son premier enfant. À la salle comme à la
-                ville, sa devise reste la même: “un esprit sain dans un corps
-                sain”.
-              </p>
-            </div>
-            <div
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0 },
-              }}
-              animate={controls}
-              initial="hidden"
-              transition={{
-                type: 'tween',
-                ease: 'easeInOut',
-                repeatType: 'reverse',
-                duration: 1,
-                delay: 2,
-              }}
-              className="mt-10 -mx-4 relative lg:mt-0"
-              aria-hidden="true"
-            >
-              <StaticImage
-                placeholder="blurred"
-                className="relative mx-auto rounded-lg"
-                width={490}
-                src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894528/super-coach/WhatsApp_Image_2021-08-23_at_13.29.47_nkbudo.jpg"
-                alt=""
-              />
+              <div className="relative">
+                <div className="mt-4 relative" aria-hidden="true">
+                  <StaticImage
+                    placeholder="blurred"
+                    className="relative mx-auto rounded-lg"
+                    width={490}
+                    src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894528/super-coach/WhatsApp_Image_2021-08-23_at_13.29.47_nkbudo.jpg"
+                    alt=""
+                  />
+                </div>
+                <p className="mt-3 text-lg text-gray-400">
+                  Derrière chaque coach accompli, il y a...une femme qui l’est
+                  tout autant! Rebecca Louissaint est une passionnée de sport et
+                  de nutrition. Portée sur les mesures concrètes qui favorisent
+                  le bien-être, cette mère et femme de feu trouve son équilibre
+                  grâce au sport. Avec son style à la fois doux et super
+                  tonique, Coach Rebecca Louissaint a donné naissance au concept
+                  Gym Poussette après la venue de son premier enfant. À la salle
+                  comme à la ville, sa devise reste la même: “un esprit sain
+                  dans un corps sain”.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -329,7 +377,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div id="courses" className="pt-16 lg:pt-24 bg-black">
+      <div id="courses-collectifs" className="pt-16 lg:pt-24 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
@@ -642,7 +690,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div id="courses" className="pt-16 lg:pt-24 bg-black">
+      <div id="courses-privés" className="pt-16 lg:pt-24 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">

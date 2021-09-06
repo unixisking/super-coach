@@ -277,7 +277,7 @@ export default function ContactPage() {
                       Contactez-nous en utilisant les informations ci-dessous
                     </p>
                     <dl className="mt-8 space-y-6">
-                      <a href="tel:+41796307553">
+                      <a href="tel:+41215468619">
                         <dt>
                           <span className="sr-only">Phone number</span>
                         </dt>
@@ -286,7 +286,7 @@ export default function ContactPage() {
                             className="flex-shrink-0 w-6 h-6 text-teal-200"
                             aria-hidden="true"
                           />
-                          <span className="ml-3">+41796307553</span>
+                          <span className="ml-3">+41 21 546 86 19</span>
                         </dd>
                       </a>
                       <a href="mailto:contact@super-coach.ch">

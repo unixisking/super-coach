@@ -210,7 +210,7 @@ function IndexPage() {
           </div>
         </Dialog>
       </Transition>
-      <div id="coaches" className="pt-16 bg-black lg:pt-24 z-20">
+      <div id="nos-coaches" className="pt-16 bg-black lg:pt-24 z-20">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
@@ -345,7 +345,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div id="testimonials" className="pt-16 bg-black lg:pt-24">
+      <div id="témoignages" className="pt-16 bg-black lg:pt-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2
@@ -377,7 +377,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div id="courses-collectifs" className="pt-16 lg:pt-24 bg-black">
+      <div id="cours-collectifs" className="pt-16 lg:pt-24 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">
@@ -690,7 +690,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      <div id="courses-privés" className="pt-16 lg:pt-24 bg-black">
+      <div id="cours-privés" className="pt-16 lg:pt-24 bg-black">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl ">
           <div className="relative">
             <h2 className="text-left text-3xl text-primary leading-8 font-medium tracking-tight sm:text-6xl pb-4">

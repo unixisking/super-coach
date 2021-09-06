@@ -128,9 +128,10 @@ export default function ContactPage() {
         },
         body: data,
       })
-        .then((response) => {
-          console.log(response);
+        .then((response) => response.text())
+        .then((data) => {
           setLoading(false);
+          console.log(data);
         })
         .catch((err) => {
           console.error(err);
@@ -148,7 +149,7 @@ export default function ContactPage() {
       <div className="min-h-screen">
         <main className="overflow-hidden">
           {/* Header */}
-          <div className="mt-16">
+          <div>
             <div className="py-24">
               <div className="relative z-10 max-w-7xl mx-auto pl-4 pr-8 sm:px-6 lg:px-8">
                 <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl w-full">

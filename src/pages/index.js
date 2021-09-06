@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import React, { Fragment, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
@@ -71,17 +70,8 @@ const features = [
 
 function IndexPage() {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
   const [isVideoShown, setIsVideoShown] = useState(false);
 
-  useEffect(() => {
-    async function animate() {
-      if (inView) {
-        await controls.start('visible');
-      }
-    }
-    animate();
-  }, [controls, inView]);
   return (
     <Layout>
       <SEO
@@ -225,7 +215,7 @@ function IndexPage() {
           </div>
           <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-              <img
+              <StaticImage
                 className="relative mx-auto rounded-lg"
                 width={490}
                 src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630508058/super-coach/DSC01308_vxm2al.jpg"
@@ -257,10 +247,7 @@ function IndexPage() {
             </div>
           </div>
 
-          <div
-            ref={ref}
-            className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
+          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative">
               <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl ">
                 Rebecca Louissaint
@@ -294,7 +281,8 @@ function IndexPage() {
               className="mt-10 -mx-4 relative lg:mt-0"
               aria-hidden="true"
             >
-              <img
+              <StaticImage
+                placeholder="blurred"
                 className="relative mx-auto rounded-lg"
                 width={490}
                 src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629894528/super-coach/WhatsApp_Image_2021-08-23_at_13.29.47_nkbudo.jpg"
@@ -321,7 +309,7 @@ function IndexPage() {
                 {features.map((feature) => (
                   <div key={feature.name}>
                     <dt>
-                      <img src={feature.image} alt="" />
+                      <img src={feature.image} alt="Histoires de Succès" />
                       <p className="mt-5 text-lg leading-6 font-medium text-gray-400">
                         {feature.text}
                       </p>
@@ -343,13 +331,14 @@ function IndexPage() {
               Cours collectifs
             </h2>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center">
               <div
                 className="mt-10 -mx-4 relative lg:mt-0 col-start-2 sm:col-start-1"
                 aria-hidden="true"
               >
-                <img
+                <StaticImage
+                  placeholder="blurred"
                   className="relative mx-auto rounded-lg"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"
@@ -384,7 +373,8 @@ function IndexPage() {
                 </p>
               </div>
               <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-                <img
+                <StaticImage
+                  placeholder="blurred"
                   className="relative mx-auto rounded-lg"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629896085/super-coach/cardio_bdjr50.png"
@@ -395,7 +385,8 @@ function IndexPage() {
 
             <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-                <img
+                <StaticImage
+                  placeholder="blurred"
                   className="relative mx-auto rounded-lg"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629901163/super-coach/sculpt_lgubni.png"
@@ -432,7 +423,8 @@ function IndexPage() {
                 </p>
               </div>
               <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-                <img
+                <StaticImage
+                  placeholder="blurred"
                   className="relative mx-auto rounded-lg"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630207646/super-coach/business_kk41ab.png"
@@ -442,7 +434,8 @@ function IndexPage() {
             </div>
             <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-                <img
+                <StaticImage
+                  placeholder="blurred"
                   className="relative mx-auto rounded-lg"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466184/super-coach/speed_dating_c7g0um.png"
@@ -482,7 +475,8 @@ function IndexPage() {
                 </p>
               </div>
               <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-                <img
+                <StaticImage
+                  placeholder="blurred"
                   className="relative mx-auto rounded-lg"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630466180/super-coach/after_workout_xelhap.png"
@@ -491,13 +485,14 @@ function IndexPage() {
               </div>
             </div>
           </div>
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             <div className="relative mt-12 lg:mt-24">
               <div className="mt-10 relative lg:mt-0" aria-hidden="true">
                 <h3 className="text-2xl text-primary font-extrabold text-gray-200 tracking-tight sm:text-3xl mt-8 lg:mt-0">
                   FULL BODY WORKOUT
                 </h3>
                 <StaticImage
+                  placeholder="blurred"
                   className="relative rounded-lg py-4 mt-4"
                   width={490}
                   src="https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895892/super-coach/full_body_workout_pfv60c.png"

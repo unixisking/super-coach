@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { SpinnerCircular } from 'spinners-react';
+import { navigate } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -101,12 +102,12 @@ export default function ContactPage() {
         },
         body: data,
       })
-        .then((response) => {
-          console.log(response);
+        .then(() => {
           setLoading(false);
+          navigate('/merci');
         })
         .catch((err) => {
-          console.error(err);
+          alert(err);
           setLoading(false);
         });
     } else {
@@ -124,12 +125,12 @@ export default function ContactPage() {
         body: data,
       })
         .then((response) => response.text())
-        .then((data) => {
+        .then(() => {
           setLoading(false);
-          console.log(data);
+          navigate('/merci');
         })
         .catch((err) => {
-          console.error(err);
+          alert(err);
           setLoading(false);
         });
     }

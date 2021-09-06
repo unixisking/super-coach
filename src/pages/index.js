@@ -66,6 +66,11 @@ const features = [
     image:
       'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1629895816/super-coach/05_b3lp3s.png',
   },
+  {
+    text: '',
+    image:
+      'https://res.cloudinary.com/dxm0sdgpv/image/upload/v1630887420/super-coach/testimonials-6_qameuj.jpg',
+  },
 ];
 
 function IndexPage() {

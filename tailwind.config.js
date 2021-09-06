@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
-  purge: false, // because I am using gatsby-plugin-purgecss
+  purge: true,
   theme: {
     extend: {
       fontFamily: {

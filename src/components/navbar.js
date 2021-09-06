@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Histoires de Succès', to: '/#témoignages' },
   { name: 'Cours collectifs', to: '/#cours-collectifs' },
   { name: 'Cours privés', to: '/#cours-privés' },
-  { name: 'Tarifs', to: '/#prix' },
+  { name: 'Tarifs', to: '/#tarifs' },
 ];
 
 const isBrowser = typeof window !== 'undefined';

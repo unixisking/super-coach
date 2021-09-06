@@ -127,7 +127,7 @@ const pricingChoice = {
 export default function Pricing() {
   const [pricesType, setPricesType] = useState('private');
   return (
-    <div id="prix" className="bg-white">
+    <div id="tarifs" className="bg-white">
       <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="text-5xl font-extrabold text-primary sm:text-center">

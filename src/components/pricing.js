@@ -77,7 +77,7 @@ const pricingChoice = {
       name: 'Training unique',
       href: '/contact',
       priceMonthly: 65,
-      description: 'Une séance de 60min',
+      description: 'Une séance de 30min',
       includedFeatures: [
         "Accès à une salle de sports complètement privatisé pour vos séances d'entrainement.",
         'Réalisations des tests pour identifier vos déséquilibres musculaires.',

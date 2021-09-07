@@ -70,5 +70,13 @@ module.exports = {
         defaultDataLayer: { platform: 'gatsby' },
       },
     },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: false, // optional parameter to include script in development
+        id: 2591179,
+        sv: 6,
+      },
+    },
   ],
 };

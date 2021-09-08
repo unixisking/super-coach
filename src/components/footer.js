@@ -2,15 +2,11 @@ import React from 'react';
 
 const footerNavigation = {
   solutions: [
-    { name: 'Histoires de Succès', href: '#testimonials' },
-    { name: 'Cours collectifs', href: '#courses' },
-    { name: 'Cours privés', href: '#courses' },
-    { name: 'Training Elites', href: '/elites' },
-    { name: 'Tarifs', href: '#pricing' },
-  ],
-  support: [
-    { name: 'THE COMPETITION STARTS AT TRAINING.', href: '#competition' },
-    { name: 'Cours personal trainer Lausanne', href: '#personal-coach' },
+    { name: 'Histoires de Succès', href: '/#témoignages' },
+    { name: 'Cours collectifs', href: '/#cours-collectifs' },
+    { name: 'Cours privés', href: '/#cours-privés' },
+    { name: 'Tarifs', href: '/#tarifs' },
+    { name: 'Contact', href: '/contact' },
   ],
   social: [
     {

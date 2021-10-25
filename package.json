@@ -11,7 +11,7 @@
     "clsx": "^1.1.1",
     "date-fns": "^2.23.0",
     "framer-motion": "^4.1.17",
-    "gatsby": "3.12.1",
+    "gatsby": "3.14.4",
     "gatsby-plugin-canonical-urls": "^3.13.0",
     "gatsby-plugin-google-tagmanager": "^3.13.0",
     "gatsby-plugin-hotjar": "^1.1.1",

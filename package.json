@@ -10,7 +10,7 @@
     "@hookform/resolvers": "^2.8.0",
     "clsx": "^1.1.1",
     "date-fns": "^2.23.0",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^6.2.6",
     "gatsby": "3.12.1",
     "gatsby-plugin-canonical-urls": "^3.13.0",
     "gatsby-plugin-google-tagmanager": "^3.13.0",

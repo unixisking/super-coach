@@ -61,7 +61,7 @@
     "@tailwindcss/forms": "0.3.3",
     "autoprefixer": "10.3.3",
     "babel-eslint": "10.1.0",
-    "cssnano": "5.0.8",
+    "cssnano": "5.1.5",
     "eslint": "7.32.0",
     "eslint-loader": "4.0.2",
     "eslint-plugin-import": "2.24.2",

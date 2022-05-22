@@ -8,7 +8,7 @@ const pricingChoice = {
       name: 'FULL BODY WORKOUT',
       href: '/contact',
       priceMonthly: 25,
-      description: 'Chaque lundi à 18h45',
+      description: 'Chaque lundi de 18h45 à 19h45',
       includedFeatures: [
         'Conçue pour raffermir la silhouette et brûler des calories',
         'Ouvert aux débutantes et à tous les niveaux',
@@ -19,7 +19,7 @@ const pricingChoice = {
       name: 'CARDIO STEP',
       href: '/contact',
       priceMonthly: 25,
-      description: 'chaque mardi à 19 heures.',
+      description: 'chaque mardi de 19h00 à 19h45',
       includedFeatures: [
         'Brûler un maximum de calories pendant notre cours CARDIO STEP',
         'Transpirer et se défouler avec le sourire et du bon son',
@@ -31,7 +31,7 @@ const pricingChoice = {
       name: 'BOOTY SCULPT',
       href: '/contact',
       priceMonthly: 25,
-      description: 'Chaque jeudi à 19h45',
+      description: 'Chaque jeudi de 19h45 à 20h45',
       includedFeatures: [
         '60 minutes hebdomadaires,parfaites pour combattre la cellulite',
         'Un fessier ferme et bien dessiné',

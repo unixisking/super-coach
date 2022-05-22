@@ -82,7 +82,10 @@ export default function ContactPage() {
     {
       id: 1,
       city: 'Lausanne',
-      address: ['Chemin Du Viaduc 12', '1008 Malley'],
+      address: [
+        'Chemin Du Viaduc 12',
+        '1008 Malley 2ème étage au Centre Louissaint training',
+      ],
     },
   ];
   const onSubmit = (formData) => {
@@ -278,7 +281,7 @@ export default function ContactPage() {
                       Contactez-nous en utilisant les informations ci-dessous
                     </p>
                     <dl className="mt-8 space-y-6">
-                      <a href="tel:+41215468619">
+                      <a href="tel:+41796307553">
                         <dt>
                           <span className="sr-only">Phone number</span>
                         </dt>
@@ -287,10 +290,10 @@ export default function ContactPage() {
                             className="flex-shrink-0 w-6 h-6 text-teal-200"
                             aria-hidden="true"
                           />
-                          <span className="ml-3">+41 21 546 86 19</span>
+                          <span className="ml-3">+41 79 630 75 53</span>
                         </dd>
                       </a>
-                      <a href="mailto:contact@super-coach.ch">
+                      <a href="mailto:steeve@louissainttraining.com">
                         <dt>
                           <span className="sr-only">Email</span>
                         </dt>
@@ -299,7 +302,9 @@ export default function ContactPage() {
                             className="flex-shrink-0 w-6 h-6 text-teal-200"
                             aria-hidden="true"
                           />
-                          <span className="ml-3">contact@super-coach.ch</span>
+                          <span className="ml-3">
+                            steeve@louissainttraining.com
+                          </span>
                         </dd>
                       </a>
                     </dl>
